@@ -48,8 +48,13 @@ from gem5.components.processors.simple_switchable_processor import (
     SimpleSwitchableProcessor,
 )
 from gem5.isas import ISA
-from gem5.resources.resource import obtain_resource
+from gem5.resources.resource import (
+    CustomResource,
+    DiskImageResource,
+    obtain_resource,
+)
 from gem5.simulate.exit_event import ExitEvent
+from gem5.simulate.exit_event_generators import exit_generator
 from gem5.simulate.simulator import Simulator
 from gem5.utils.requires import requires
 
@@ -87,7 +92,7 @@ memory = SingleChannelDDR3_1600(size="3GB")
 # cores for the command we wish to run after boot.
 processor = SimpleSwitchableProcessor(
     starting_core_type=CPUTypes.KVM,
-    switch_core_type=CPUTypes.TIMING,
+    switch_core_type=CPUTypes.O3,
     isa=ISA.X86,
     num_cores=2,
 )
@@ -113,13 +118,17 @@ board = X86Board(
 command = (
     "m5 exit;"
     + "echo 'This is running on Timing CPU cores.';"
-    + "sleep 1;"
+    # + "sleep 2;"
     + "m5 exit;"
 )
-
-workload = obtain_resource("x86-ubuntu-18.04-boot")
-workload.set_parameter("readfile_contents", command)
-board.set_workload(workload)
+board.set_kernel_disk_workload(
+    kernel=CustomResource("resources/vmlinux"),
+    disk_image=DiskImageResource(
+        "ubuntu-x86.img",
+        root_partition="1",
+    ),
+    readfile_contents=command,
+)
 
 simulator = Simulator(
     board=board,
