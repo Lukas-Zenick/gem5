@@ -1,0 +1,4 @@
+echo "Test 1" > test_1.txt
+echo "Test 2" > test_2.txt
+echo "Test 3" > test_3.txt
+echo "Test 4" > test_4.txt
