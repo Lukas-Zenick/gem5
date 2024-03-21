@@ -175,3 +175,12 @@ class WeightedLRURP(LRURP):
     type = "WeightedLRURP"
     cxx_class = "gem5::replacement_policy::WeightedLRU"
     cxx_header = "mem/cache/replacement_policies/weighted_lru_rp.hh"
+
+
+class CS395TRP(BaseReplacementPolicy):
+    type = "CS395TRP"
+    cxx_class = "gem5::replacement_policy::CS395TRP"
+    cxx_header = "mem/cache/replacement_policies/cs395t_rp.hh"
+
+    size = Param.Unsigned(1024, "Example parameter")
+    # TODO: Add more params here
