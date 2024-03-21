@@ -41,7 +41,7 @@ memory = DualChannelDDR4_2400(size="3GB")
 # Create a board
 board = SimpleBoard(
     # FIXME TODO: Set the frequency. Gem5 understands text labels, e.g., "800MHz"
-    clk_freq = FIXME,
+    clk_freq = "4GHz",
     processor = processor,
     cache_hierarchy = cache_hierarchy,
     memory = memory
