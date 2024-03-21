@@ -686,3 +686,11 @@ class PIFPrefetcher(QueuedPrefetcher):
         self.addEvent(
             HWPProbeEventRetiredInsts(self, simObj, "RetiredInstsPC")
         )
+
+class CS395TPrefetcher(QueuedPrefetcher):
+    type = "CS395TPrefetcher"
+    cxx_class = "gem5::prefetch::CS395TPrefetcher"
+    cxx_header = "mem/cache/prefetch/cs395t_pf.hh"
+
+    size = Param.Unsigned(1024, "Example parameter")
+    # TODO: Add more params here

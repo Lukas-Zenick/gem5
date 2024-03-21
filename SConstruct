@@ -109,7 +109,7 @@ AddOption('--with-cxx-config', action='store_true',
           help="Build with support for C++-based configuration")
 AddOption('--ignore-style', action='store_true',
           help='Disable style checking hooks')
-AddOption('--linker', action='store', default=None, choices=linker_options,
+AddOption('--linker', action='store', default='mold', choices=linker_options,
           help=f'Select which linker to use ({", ".join(linker_options)})')
 AddOption('--gold-linker', action='store_const', const='gold', dest='linker',
           help='Use the gold linker. Deprecated: Use --linker=gold')
@@ -579,7 +579,9 @@ for variant_path in variant_paths:
                        ((isdir('/usr/libexec/mold') and \
                            conf.CheckLinkFlag('-B/usr/libexec/mold')) or \
                        (isdir('/usr/local/libexec/mold') and \
-                           conf.CheckLinkFlag('-B/usr/local/libexec/mold'))):
+                           conf.CheckLinkFlag('-B/usr/local/libexec/mold')) or \
+                       (isdir('/scratch/cluster/speedway/opt/mold-2.1.0/libexec/mold') and \
+                           conf.CheckLinkFlag('-B/scratch/cluster/speedway/opt/mold-2.1.0/libexec/mold'))):
                         pass # support mold
                     else:
                         error(f'Linker "{linker}" is not supported')
