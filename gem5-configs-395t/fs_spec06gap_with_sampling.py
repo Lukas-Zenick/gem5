@@ -42,7 +42,8 @@ memory = DualChannelDDR4_2400(size="3GB")
 
 # Create a board
 board = X86Board(
-    clk_freq = "3GHz",
+    # Using 4 GHz to match Skylake config from Assignment 1A.
+    clk_freq = "4GHz",
     processor = processor,
     cache_hierarchy = cache_hierarchy,
     memory = memory

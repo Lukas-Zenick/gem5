@@ -25,3 +25,9 @@ def parse() -> Dict[str, Any]:
 
 def get(key: str):
     return args.get(key)
+
+def set_component_parameters(component, params: dict, parent_name: str = ""):
+    for param in params:
+        prefix = f'[{parent_name}] ' if parent_name else ''
+        print(f"{prefix}Setting {type(component).__name__} parameter \"{param}\" to {params[param]}")
+        setattr(component, param, params[param])

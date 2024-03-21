@@ -9,6 +9,7 @@ Constructor accepts argument to change the branch predictor (default: TAGE)
 from typing import Type
 from m5.objects import *
 import components.cpus.simargs_o3_cpu as simargs
+from util.simarglib import set_component_parameters
 
 """
 Set up the functional units within the CPU
@@ -188,6 +189,23 @@ class SkylakeTournament(TournamentBP):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
+class SkylakeCS395T(CS395TBP):
+    btb = SimpleBTB(numEntries=512, tagBits=19)
+    ras = ReturnAddrStack(numEntries=32)
+    indirectBranchPred = IndirectPred()
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
+
+"""
+Set branch predictor parameters
+"""
+def setup_bpred_parameters(bpred,
+                            bpred_params : dict = {}):
+    """Setup branch predictor parameters
+    """
+    if isinstance(bpred, SkylakeCS395T):
+        bpred.size = bpred_params["size"]
+
 """
 Create an out-of-order CPU with the subunits defined above
 """
@@ -235,10 +253,10 @@ class SkylakeCPU(O3CPU):
         # the CPU, so you'll have to hardcode your values here.
         # 
         # FIXME TODO: Set these appropriately.
-        self.numROBEntries = FIXME
+        self.numROBEntries = 224
         self.numIQEntries = 97
-        self.LQEntries = FIXME
-        self.SQEntries = FIXME
+        self.LQEntries = 72
+        self.SQEntries = 56
         self.numPhysIntRegs = 180
         self.numPhysFloatRegs = 168
 
@@ -251,3 +269,6 @@ class SkylakeCPU(O3CPU):
         self.branchPred = BranchPredictorCls()
         
         print(f"Creating SkylakeCPU object: bpred={type(self.branchPred)}")
+        set_component_parameters(self.branchPred, cpu_params["bpred_params"],
+                                 parent_name=type(self).__name__)
+        print("Branch predictor size: {}".format(self.branchPred.size))
