@@ -271,4 +271,4 @@ class SkylakeCPU(O3CPU):
         print(f"Creating SkylakeCPU object: bpred={type(self.branchPred)}")
         set_component_parameters(self.branchPred, cpu_params["bpred_params"],
                                  parent_name=type(self).__name__)
-        print("Branch predictor size: {}".format(self.branchPred.size))
+        # print("Branch predictor size: {}".format(self.branchPred.size))
