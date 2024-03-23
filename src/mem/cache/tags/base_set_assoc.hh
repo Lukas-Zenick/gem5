@@ -128,6 +128,11 @@ class BaseSetAssoc : public BaseTags
     {
         CacheBlk *blk = findBlock(pkt->getAddr(), pkt->isSecure());
 
+        const std::vector<ReplaceableEntry*> entries = indexingPolicy->getPossibleEntries(pkt->getAddr());
+
+        // TODO: Refresh statistics in replacement policy
+        replacementPolicy->access(pkt, blk != nullptr, entries);
+
         // Access all tags in parallel, hence one in each way.  The data side
         // either accesses all blocks in parallel, or one block sequentially on
         // a hit.  Sequential access with a miss doesn't access data.
@@ -145,8 +150,9 @@ class BaseSetAssoc : public BaseTags
             // Update number of references to accessed block
             blk->increaseRefCount();
 
+            const std::vector<ReplaceableEntry*> entries = indexingPolicy->getPossibleEntries(pkt->getAddr());
             // Update replacement data of accessed block
-            replacementPolicy->touch(blk->replacementData, pkt);
+            replacementPolicy->touch(blk->replacementData, pkt, entries);
         }
 
         // The tag lookup latency is the same for a hit or a miss
@@ -197,8 +203,10 @@ class BaseSetAssoc : public BaseTags
         // Increment tag counter
         stats.tagsInUse++;
 
+        const std::vector<ReplaceableEntry*> entries = indexingPolicy->getPossibleEntries(regenerateBlkAddr(blk));
+
         // Update replacement policy
-        replacementPolicy->reset(blk->replacementData, pkt);
+        replacementPolicy->reset(blk->replacementData, pkt, entries);
     }
 
     void moveBlock(CacheBlk *src_blk, CacheBlk *dest_blk) override;

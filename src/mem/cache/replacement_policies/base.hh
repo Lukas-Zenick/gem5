@@ -58,6 +58,11 @@ class Base : public SimObject
     Base(const Params &p) : SimObject(p) {}
     virtual ~Base() = default;
 
+    /** For any access, update the replacement policy */
+    virtual void access(const PacketPtr pkt, bool hit, const ReplacementCandidates& candidates) {
+        return;
+    }
+
     /**
      * Invalidate replacement data to set it as the next probable victim.
      *
@@ -73,6 +78,11 @@ class Base : public SimObject
      * @param pkt Packet that generated this access.
      */
     virtual void touch(const std::shared_ptr<ReplacementData>&
+        replacement_data, const PacketPtr pkt, const ReplacementCandidates& candidates)
+    {
+        touch(replacement_data, pkt);
+    }
+    virtual void touch(const std::shared_ptr<ReplacementData>&
         replacement_data, const PacketPtr pkt)
     {
         touch(replacement_data);
@@ -86,6 +96,11 @@ class Base : public SimObject
      * @param replacement_data Replacement data to be reset.
      * @param pkt Packet that generated this access.
      */
+    virtual void reset(const std::shared_ptr<ReplacementData>&
+        replacement_data, const PacketPtr pkt, const ReplacementCandidates& candidates)
+    {
+        reset(replacement_data, pkt);
+    }
     virtual void reset(const std::shared_ptr<ReplacementData>&
         replacement_data, const PacketPtr pkt)
     {
