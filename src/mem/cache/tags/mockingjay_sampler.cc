@@ -1,6 +1,7 @@
 #include "mem/cache/tags/mockingjay_sampler.hh"
 
 namespace gem5 {
+namespace mockingjay {
 
 static constexpr double TEMP_DIFFERENCE = 1.0 / 16.0;
 static constexpr int MAXRD_THRESHOLD = 22;
@@ -216,4 +217,5 @@ bool SampledCache:: sample(uint64_t addr, uint64_t PC, uint8_t *curr_timestamp, 
     }
 }
 
+}
 }

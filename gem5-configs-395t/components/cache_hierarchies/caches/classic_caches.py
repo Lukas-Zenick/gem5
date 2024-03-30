@@ -9,7 +9,7 @@ from typing import Type
 from m5.objects import (
     Cache, Clusivity,
     BasePrefetcher, CS395TPrefetcher, StridePrefetcher, # Prefetchers
-    BaseReplacementPolicy, CS395TRP, LRURP,             # Replacement policies
+    BaseReplacementPolicy, CS395TRP, LRURP, RARE, RPC,            # Replacement policies
     NULL
 )
 from util.simarglib import set_component_parameters

@@ -7,6 +7,7 @@
 #include "base/sat_counter.hh"
 
 namespace gem5 {
+namespace mockingjay {
 
 static constexpr uint32_t NUM_WAY_CACHE_SET = 5;
 static constexpr uint32_t HASHED_PC_LEN = 11;
@@ -259,4 +260,5 @@ class ReuseDistPredictor
     int getInfRd();
 };
 
+}
 }

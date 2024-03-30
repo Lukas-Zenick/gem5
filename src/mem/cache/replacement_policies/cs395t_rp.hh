@@ -43,10 +43,10 @@ class CS395TRP : public Base
         ~CS395TRP() = default;
 
         /** History Sampler */
-        std::unique_ptr<SampledCache> sampled_cache;
+        std::unique_ptr<mockingjay::SampledCache> sampled_cache;
 
         /** Reuse Distance Predictor */
-        std::unique_ptr<ReuseDistPredictor> predictor;
+        std::unique_ptr<mockingjay::ReuseDistPredictor> predictor;
 
         /** Number of bits of ETR counter */
         const int _num_etr_bits;
