@@ -1,6 +1,7 @@
 #include "mem/cache/tags/mockingjay_sampler.hh"
 
 namespace gem5 {
+namespace mockingjay {
 
 static constexpr double TEMP_DIFFERENCE = 1.0 / 16.0;
 static constexpr int MAXRD_THRESHOLD = 22;
@@ -62,7 +63,7 @@ uint64_t get_pc_signature(uint64_t pc, bool hit, bool prefetch, uint32_t core, u
     return pc;
 }
 
-ReuseDistPredictor::ReuseDistPredictor(const int num_entries, const int bits_per_entry, const int aging_clock_size, const int num_cpus) : 
+ReuseDistPredictor::ReuseDistPredictor(const int num_entries, const int bits_per_entry, const int aging_clock_size, const int num_cpus) :
                                        num_entries(num_entries), bits_per_entry(bits_per_entry), _granularity(aging_clock_size), _num_cpus(num_cpus) {
     counters = new int[num_entries];
     for (int i = 0; i < num_entries; i++) {
@@ -84,7 +85,7 @@ void ReuseDistPredictor::train(uint64_t last_PC, bool sampled_cache_hit, uint8_t
     // Sampled cache miss
     //  1. Train as scan (INF_RD)
     if (sampled_cache_hit) {
-        DPRINTF(MockingjayDebug, "Predictor (train) ---- Sample cached hit: Last signature %ld, Current timestamp: %d, Last Timestamp: %d\n", 
+        DPRINTF(MockingjayDebug, "Predictor (train) ---- Sample cached hit: Last signature %ld, Current timestamp: %d, Last Timestamp: %d\n",
                 last_PC, curr_timestamp, last_timestamp);
         int sample = time_elapsed(curr_timestamp, last_timestamp);
         if (sample <= max_value) {
@@ -99,7 +100,7 @@ void ReuseDistPredictor::train(uint64_t last_PC, bool sampled_cache_hit, uint8_t
         }
     } else {
         if (evict) {
-            DPRINTF(MockingjayDebug, "Predictor (train) ---- Sample cached miss and eviction: Last signature %ld, Current timestamp: %d, Last Timestamp: %d\n", 
+            DPRINTF(MockingjayDebug, "Predictor (train) ---- Sample cached miss and eviction: Last signature %ld, Current timestamp: %d, Last Timestamp: %d\n",
                 last_PC, curr_timestamp, last_timestamp);
             if (counters[last_PC] == -1) {
                 counters[last_PC] = max_value;
@@ -157,9 +158,9 @@ int ReuseDistPredictor::getInfRd() {
     return max_value;
 }
 
-SampledCache::SampledCache(const int num_sampled_sets, const int num_cache_sets, const int cache_block_size, const int timer_size, 
+SampledCache::SampledCache(const int num_sampled_sets, const int num_cache_sets, const int cache_block_size, const int timer_size,
                            const int num_cpus, const int num_sampled_internal_sets)
-    : _num_sampled_sets(num_sampled_sets), _num_cache_sets(num_cache_sets), _cache_block_size(cache_block_size), _timer_size(1 << timer_size), 
+    : _num_sampled_sets(num_sampled_sets), _num_cache_sets(num_cache_sets), _cache_block_size(cache_block_size), _timer_size(1 << timer_size),
         _num_cpus(num_cpus), _num_sampled_internal_sets(num_sampled_internal_sets) {
     sample_data = new CacheSet[num_sampled_sets];
     set_timestamp_counter = new uint64_t[num_sampled_sets];
@@ -183,7 +184,7 @@ bool SampledCache:: sample(uint64_t addr, uint64_t PC, uint8_t *curr_timestamp, 
     uint64_t num_sampled_internal_sets_mask = (1 << _log2_sampled_internal_sets) - 1;
 
     if (is_sampled_set(set, log2_num_cache_sets, log2_num_sets)) {
-        
+
         DPRINTF(MockingjayDebug, "Sampler ---- Set hit: Cache Set index %d\n", set);
 
         uint16_t addr_tag = (addr >> (_log2_cache_block_size + _log2_sampled_internal_sets + log2_num_cache_sets)) & ADDRESS_TAG_MASK;
@@ -216,4 +217,5 @@ bool SampledCache:: sample(uint64_t addr, uint64_t PC, uint8_t *curr_timestamp, 
     }
 }
 
+}
 }

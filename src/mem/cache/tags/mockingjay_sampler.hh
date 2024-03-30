@@ -7,6 +7,7 @@
 #include "base/sat_counter.hh"
 
 namespace gem5 {
+namespace mockingjay {
 
 static constexpr uint32_t NUM_WAY_CACHE_SET = 5;
 static constexpr uint32_t HASHED_PC_LEN = 11;
@@ -118,7 +119,7 @@ class SampledCache
               evict_lru = ways[i].lru;
               evict_way = i;
             } else if (ways[i].valid && ways[i].lru == evict_lru) {
-              panic("LRU for sampled cache should not have the same value: Evict way: %d, Evict LRU value: %d, LRU: %d %d %d %d %d", 
+              panic("LRU for sampled cache should not have the same value: Evict way: %d, Evict LRU value: %d, LRU: %d %d %d %d %d",
                     evict_way, evict_lru, ways[0].lru, ways[1].lru, ways[2].lru, ways[3].lru, ways[4].lru);
             }
           }
@@ -259,4 +260,5 @@ class ReuseDistPredictor
     int getInfRd();
 };
 
+}
 }

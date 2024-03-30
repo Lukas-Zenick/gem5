@@ -10,8 +10,8 @@ namespace replacement_policy
 
 CS395TRP::CS395TRP(const CS395TRPParams &params)
     : Base(params),  _num_etr_bits(params.num_etr_bits) {
-    sampled_cache = std::make_unique<SampledCache>(params.num_sampled_sets, params.num_cache_sets, params.cache_block_size, params.timer_size, params.num_cpus, params.num_internal_sampled_sets);
-    predictor = std::make_unique<ReuseDistPredictor>(params.num_pred_entries, params.num_pred_bits, params.num_clock_bits, params.num_cpus);
+    sampled_cache = std::make_unique<mockingjay::SampledCache>(params.num_sampled_sets, params.num_cache_sets, params.cache_block_size, params.timer_size, params.num_cpus, params.num_internal_sampled_sets);
+    predictor = std::make_unique<mockingjay::ReuseDistPredictor>(params.num_pred_entries, params.num_pred_bits, params.num_clock_bits, params.num_cpus);
     age_ctr.resize(params.num_cache_sets, 0);
     _log2_block_size = (int) std::log2(params.cache_block_size);
     _log2_num_cache_sets = (int) std::log2(params.num_cache_sets);
@@ -86,7 +86,7 @@ void
 CS395TRP::reset(const std::shared_ptr<ReplacementData>& replacement_data, const PacketPtr pkt, const ReplacementCandidates& candidates) {
     std::shared_ptr<CS395TReplData> casted_replacement_data =
         std::static_pointer_cast<CS395TReplData>(replacement_data);
-    
+
     // TODO: Which requests should we monitor?
     if (!pkt->isResponse() || !pkt->req->hasPC() || !pkt->req->hasContextId()) {
         return;
