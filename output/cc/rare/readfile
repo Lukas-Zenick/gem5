@@ -1,1 +1,1 @@
-m5 workbegin;cd spec06/429.mcf        ; ./429.mcf inp.in;m5 workend;sleep 1;m5 exit;
+m5 workbegin;cd gap                   ; ./cc -r 1 -f ./graphs/g22.el;m5 workend;sleep 1;m5 exit;

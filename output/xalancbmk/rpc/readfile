@@ -1,0 +1,1 @@
+m5 workbegin;cd spec06/483.xalancbmk  ; ./483.xalancbmk -v t5.xml xalanc.xsl > /dev/null;m5 workend;sleep 1;m5 exit;

@@ -1,0 +1,1 @@
+m5 workbegin;cd spec06/450.soplex     ; ./450.soplex -s1 -e -m45000 pds-50.mps;m5 workend;sleep 1;m5 exit;

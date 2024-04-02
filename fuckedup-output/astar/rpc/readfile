@@ -1,0 +1,1 @@
+m5 workbegin;cd spec06/473.astar      ; ./473.astar BigLakes2048.cfg;m5 workend;sleep 1;m5 exit;

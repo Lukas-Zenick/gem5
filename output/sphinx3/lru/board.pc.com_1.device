@@ -1,0 +1,1347 @@
+Linux version 4.19.83 (aakahlow@amarillo) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #1 SMP Thu Nov 28 16:06:01 PST 2019
+Command line: earlyprintk=ttyS0 console=ttyS0 lpj=7999923 root=/dev/hda1 disk_device=/dev/hda
+CPU: vendor_id 'HygonGenuine' unknown, using generic init.
+CPU: Your system may be unstable.
+x86/fpu: x87 FPU will use FXSAVE
+BIOS-provided physical RAM map:
+BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+BIOS-e820: [mem 0x000000000009fc00-0x00000000000fffff] reserved
+BIOS-e820: [mem 0x0000000000100000-0x00000000bfffffff] usable
+BIOS-e820: [mem 0x00000000ffff0000-0x00000000ffffffff] reserved
+bootconsole [earlyser0] enabled
+NX (Execute Disable) protection: active
+SMBIOS 2.5 present.
+DMI:  , BIOS  06/08/2008
+tsc: Fast TSC calibration failed
+AGP: No AGP bridge found
+last_pfn = 0xc0000 max_arch_pfn = 0x400000000
+Disabled
+x86/PAT: MTRRs disabled, skipping PAT initialization too.
+CPU MTRRs all blank - virtualized system.
+x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+found SMP MP-table at [mem 0x000f0050-0x000f005f]
+ACPI: Early table checksum verification disabled
+ACPI: RSDP 0x00000000000F01B0 000024 (v02       )
+ACPI: XSDT 0x00000000000F01F8 000024 (v01                 00000000      00000000)
+ACPI BIOS Error (bug): Invalid table length 0x24 in RSDT/XSDT (20180810/tbutils-291)
+Zone ranges:
+  DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+  DMA32    [mem 0x0000000001000000-0x00000000bfffffff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000001000-0x000000000009efff]
+  node   0: [mem 0x0000000000100000-0x00000000bfffffff]
+Reserved but unavailable: 98 pages
+Initmem setup node 0 [mem 0x0000000000001000-0x00000000bfffffff]
+Intel MultiProcessor Specification v1.4
+MPTABLE: OEM ID: 
+MPTABLE: Product ID: 
+MPTABLE: APIC at: 0xFEE00000
+Processor #0 (Bootup-CPU)
+IOAPIC[0]: apic_id 1, version 20, address 0xfec00000, GSI 0-23
+Processors: 1
+smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[mem 0xc0000000-0xfffeffff] available for PCI devices
+Booting paravirtualized kernel on bare hardware
+clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+random: get_random_bytes called from start_kernel+0x8f/0x583 with crng_init=0
+setup_percpu: NR_CPUS:8192 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+percpu: Embedded 41 pages/cpu s127960 r8192 d31784 u2097152
+Built 1 zonelists, mobility grouping on.  Total pages: 775561
+Kernel command line: earlyprintk=ttyS0 console=ttyS0 lpj=7999923 root=/dev/hda1 disk_device=/dev/hda
+Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+AGP: Checking aperture...
+AGP: No AGP bridge found
+Memory: 3072280K/3145336K available (8204K kernel code, 1570K rwdata, 1940K rodata, 1204K init, 1636K bss, 73056K reserved, 0K cma-reserved)
+Kernel/User page tables isolation: enabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=1.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+NR_IRQS: 524544, nr_irqs: 256, preallocated irqs: 16
+Console: colour dummy device 80x25
+console [ttyS0] enabled
+console [ttyS0] enabled
+bootconsole [earlyser0] disabled
+bootconsole [earlyser0] disabled
+APIC: Switch to symmetric I/O mode setup
+ExtINT not setup in hardware but reported by MP table
+..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+tsc: Unable to calibrate against PIT
+tsc: No reference (HPET/PMTIMER) available
+tsc: Marking TSC unstable due to could not calculate TSC khz
+Calibrating delay loop (skipped) preset value.. 15999.84 BogoMIPS (lpj=7999923)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+mce: unknown CPU type - not enabling MCE support
+Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Spectre V2 : Mitigation: Full generic retpoline
+Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Speculative Store Bypass: Vulnerable
+MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+Freeing SMP alternatives memory: 24K
+smpboot: CPU0: HygonGenuine Fake gem5 x86_64 CPU (family: 0xf, model: 0x25, stepping: 0x1)
+Performance Events: no PMU driver, software events only.
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+smp: Brought up 1 node, 1 CPU
+smpboot: Max logical packages: 1
+smpboot: Total of 1 processors activated (15999.84 BogoMIPS)
+devtmpfs: initialized
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 256 (order: 2, 16384 bytes)
+NET: Registered protocol family 16
+audit: initializing netlink subsys (disabled)
+cpuidle: using governor ladder
+PCI: Using configuration type 1 for base access
+audit: type=2000 audit(1325376000.253:1): state=initialized audit_enabled=0 res=1
+HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+ACPI: Interpreter disabled.
+vgaarb: loaded
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+PCI: Probing PCI hardware
+PCI host bridge to bus 0000:00
+pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+pci_bus 0000:00: root bus resource [mem 0x00000000-0xffffffffffff]
+pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x14: [io  0x03f6]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x1c: [io  0x0376]
+clocksource: Switched to clocksource refined-jiffies
+VFS: Disk quotas dquot_6.6.0
+VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+pnp: PnP ACPI: disabled
+pci 0000:00:04.0: BAR 6: assigned [mem 0xc0000000-0xc00007ff pref]
+pci 0000:00:04.0: BAR 4: assigned [io  0x1000-0x100f]
+NET: Registered protocol family 2
+tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes)
+TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 32768 bind 32768)
+UDP hash table entries: 2048 (order: 4, 65536 bytes)
+UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+NET: Registered protocol family 1
+platform rtc_cmos: registered platform RTC device (no PNP device found)
+workingset: timestamp_bits=62 max_order=20 bucket_order=0
+fuse init (API version 7.27)
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+io scheduler mq-deadline registered
+io scheduler kyber registered
+acpiphp_ibm: ibm_acpiphp_init: acpi_walk_namespace failed
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 8250
+Linux agpgart interface v0.103
+brd: module loaded
+loop: module loaded
+Uniform Multi-Platform E-IDE driver
+piix 0000:00:04.0: IDE controller (0x8086:0x7111 rev 0x00)
+pci 0000:00:04.0: enabling device (0000 -> 0001)
+pci 0000:00:04.0: PCI->APIC IRQ transform: INT A -> IRQ 16
+piix 0000:00:04.0: not 100% native mode: will probe irqs later
+    ide0: BM-DMA at 0x1000-0x1007
+    ide1: BM-DMA at 0x1008-0x100f
+hda: M5 IDE Disk, ATA DISK drive
+hda: UDMA/33 mode selected
+ide0 at 0x1f0-0x1f7,0x3f6 on irq 14
+ide1 at 0x170-0x177,0x376 on irq 15
+ide_generic: please use "probe_mask=0x3f" module parameter for probing all legacy ISA IDE ports
+ide-gd driver 1.18
+hda: max request size: 128KiB
+hda: 16777216 sectors (8589 MB), CHS=16644/16/63
+ hda: hda1 hda2 < hda5 >
+ide-cd driver 5.00
+Loading iSCSI transport class v2.0-870.
+e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+e1000: Copyright (c) 1999-2006 Intel Corporation.
+e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+igb: Copyright (c) 2007-2014 Intel Corporation.
+igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+ixgbe: Intel(R) 10 Gigabit PCI Express Network Driver - version 5.1.0-k
+ixgbe: Copyright (c) 1999-2016 Intel Corporation.
+ixgbevf: Intel(R) 10 Gigabit PCI Express Virtual Function Network Driver - version 4.1.0-k
+ixgbevf: Copyright (c) 2009 - 2015 Intel Corporation.
+ixgb: Intel(R) PRO/10GbE Network Driver - version 1.0.135-k2-NAPI
+ixgb: Copyright (c) 1999-2008 Intel Corporation.
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-pci: EHCI PCI platform driver
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-pci: OHCI PCI platform driver
+uhci_hcd: USB Universal Host Controller Interface driver
+i8042: PNP: No PS/2 controller found.
+i8042: Probing ports directly.
+serio: i8042 KBD port at 0x60,0x64 irq 1
+serio: i8042 AUX port at 0x60,0x64 irq 12
+mousedev: PS/2 mouse device common for all mice
+input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+random: fast init done
+IR NEC protocol handler initialized
+IR RC5(x/sz) protocol handler initialized
+IR RC6 protocol handler initialized
+IR JVC protocol handler initialized
+IR Sony protocol handler initialized
+IR SANYO protocol handler initialized
+IR Sharp protocol handler initialized
+IR MCE Keyboard/mouse protocol handler initialized
+IR XMP protocol handler initialized
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered protocol family 17
+mce: Unable to init MCE device (rc: -5)
+mce: Using 32 MCE banks
+Unstable clock detected, switching default tracing clock to "global"
+If you want to keep using the local clock, then add:
+  "trace_clock=local"
+on the kernel command line
+EXT4-fs (hda1): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext4 filesystem) on device 3:1.
+devtmpfs: mounted
+Freeing unused kernel image memory: 1204K
+Write protecting the kernel read-only data: 12288k
+Freeing unused kernel image memory: 2020K
+Freeing unused kernel image memory: 108K
+rodata_test: all tests were successful
+Run /sbin/init as init process
+systemd[1]: System time before build time, advancing clock.
+systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+systemd[1]: Detected architecture x86-64.
+
+Welcome to [1mUbuntu 18.04.6 LTS[0m!
+
+systemd[1]: Set hostname to <ubuntu>.
+systemd[1]: File /lib/systemd/system/systemd-journald.service:36 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+systemd[1]: Configuration file /lib/systemd/system/serial-getty@.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Created slice System Slice.
+[[0;32m  OK  [0m] Created slice System Slice.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Listening on Syslog Socket.
+[[0;32m  OK  [0m] Listening on Syslog Socket.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Listening on udev Control Socket.
+[[0;32m  OK  [0m] Listening on udev Control Socket.
+systemd[1]: Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Listening on fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Listening on Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on Journal Socket.
+         Starting Set the console keyboard layout...
+[[0;32m  OK  [0m] Started Read required files in advance.
+         Starting Remount Root and Kernel File Systems...
+[[0;32m  OK  [0m] Listening on Journal Audit SoEXT4-fs (hda1): re-mounted. Opts: errors=remount-ro
+cket.
+         Starting Load Kernel Modules...
+[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+         Starting Create Static Device Nodes in /dev...
+         Mounting POSIX Message Queue File System...
+[[0;32m  OK  random: crng init done
+random: 7 urandom warning(s) missed due to ratelimiting
+[0m] Created slice User and Session Slice.
+[[0;32m  OK  [0m] Reached target Slices.
+[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+         Mounting Huge Pages File System...
+[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
+[[0;32m  OK  [0m] Reached target Remote File Systems.
+[[0;32m  OK  [0m] Listening on udev Kernel Socket.
+         Starting udev Coldplug all Devices...
+         Starting Journal Service...
+         Starting Uncomplicated firewall...
+         Mounting Kernel Debug File System...
+[[0;32m  OK  [0m] Started Journal Service.
+[[0;32m  OK  [0m] Started Set the console keyboard layout.
+[[0;32m  OK  [0m] Started Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Started Load Kernel Modules.
+[[0;32m  OK  [0m] Started Create Static Device Nodes in /dev.
+[[0;32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[0;32m  OK  [0m] Mounted Huge Pages File System.
+[[0;32m  OK  [0m] Started Uncomplicated firewall.
+[[0;32m  OK  [0m] Mounted Kernel Debug File System.
+[[0;32m  OK  [0m] Started udev Coldplug all Devices.
+         Starting Apply Kernel Variables...
+         Mounting Kernel Configuration File System...
+         Mounting FUSE Control File System...
+         Starting udev Kernel Device Manager...
+         Starting Load/Save Random Seed...
+[[0;32m  OK  [0m] Reached target Local File Systems (Pre).
+[[0;32m  OK  [0m] Reached target Local File Systems.
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Set console font and keymap...
+         Starting Flush Journal to Persistent Storage...
+[[0;32m  OK  [0m] Started udev Kernel Device Manager.
+[[0;32m  OK  [0m] Started Apply Kernel Variables.
+[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
+[[0;32m  OK  [0m] Mounted FUSE Control File System.
+[[0;32m  OK  [0m] Started Load/Save Random Seed.
+[[0;32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[0;32m  OK  [0m] Started Set console font and keymap.
+[[0;32m  OK  [0m] Found device /dev/ttyS0.
+         Starting Network Service...
+[[0;32m  OK  [0m] Started Dispatch Password Requests to Console Directory Watch.
+[[0;32m  OK  [0m] Reached target Paths.
+[[0;32m  OK  [0m] Reached target Local Encrypted Volumes.
+[[0;32m  OK  [0m] Started Network Service.
+[[0;32m  OK  [0m] Started Flush Journal to Persistent Storage.
+         Starting Create Volatile Files and Directories...
+[[0;32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Network Time Synchronization...
+         Starting Update UTMP about System Boot/Shutdown...
+         Starting Network Name Resolution...
+[[0;32m  OK  [0m] Started Network Time Synchronization.
+[[0;32m  OK  [0m] Started Network Name Resolution.
+[[0;32m  OK  [0m] Reached target Host and Network Name Lookups.
+[[0;32m  OK  [0m] Reached target Network.
+[[0;32m  OK  [0m] Reached target System Time Synchronized.
+[[0;32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
+[[0m[0;31m*     [0m] A start job is running for dev-disk…f58ac01c45e.device (9s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…f58ac01c45e.device (9s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (10s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (11s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (11s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (12s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (13s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (14s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (14s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (15s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (16s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (16s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (17s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (18s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…58ac01c45e.device (18s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (19s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (20s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (20s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (21s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (22s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (23s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (23s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (24s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (25s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (25s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (26s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (27s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (27s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…58ac01c45e.device (28s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (29s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (30s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (30s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (31s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (32s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (32s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (33s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (34s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (34s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (35s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (36s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (36s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (37s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…58ac01c45e.device (38s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (39s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (39s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (40s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (41s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (41s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (42s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (43s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (43s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (44s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (45s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (45s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (46s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (47s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…58ac01c45e.device (47s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (48s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (48s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (49s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (49s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (50s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (50s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (51s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (51s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (52s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (52s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (53s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (53s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (54s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…58ac01c45e.device (54s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…58ac01c45e.device (55s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…58ac01c45e.device (55s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…58ac01c45e.device (56s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (56s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (57s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (57s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (58s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (58s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…58ac01c45e.device (59s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…58ac01c45e.device (59s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…8ac01c45e.device (1min / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…8ac01c45e.device (1min / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…01c45e.device (1min 1s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…01c45e.device (1min 1s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…01c45e.device (1min 2s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…01c45e.device (1min 2s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…01c45e.device (1min 3s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…01c45e.device (1min 3s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…01c45e.device (1min 4s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…01c45e.device (1min 4s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…01c45e.device (1min 5s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…01c45e.device (1min 5s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…01c45e.device (1min 6s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…01c45e.device (1min 6s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…01c45e.device (1min 7s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…01c45e.device (1min 7s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…01c45e.device (1min 8s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…01c45e.device (1min 8s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…01c45e.device (1min 9s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…01c45e.device (1min 9s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 10s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…1c45e.device (1min 10s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 11s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 11s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 12s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 12s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 13s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…1c45e.device (1min 13s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 14s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…1c45e.device (1min 14s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…1c45e.device (1min 15s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…1c45e.device (1min 15s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…1c45e.device (1min 16s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…1c45e.device (1min 16s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 17s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…1c45e.device (1min 17s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 18s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 18s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 19s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 19s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 20s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…1c45e.device (1min 20s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 21s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…1c45e.device (1min 21s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…1c45e.device (1min 22s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…1c45e.device (1min 22s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…1c45e.device (1min 23s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…1c45e.device (1min 23s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 24s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…1c45e.device (1min 24s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 25s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 25s / 1min 31s)[K[     [0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 26s / 1min 31s)[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 26s / 1min 31s)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…1c45e.device (1min 27s / 1min 31s)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…1c45e.device (1min 27s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 28s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…1c45e.device (1min 28s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…1c45e.device (1min 29s / 1min 31s)[K[[0m[0;31m*     [0m] A start job is running for dev-disk…1c45e.device (1min 29s / 1min 31s)[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…1c45e.device (1min 30s / 1min 31s)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…1c45e.device (1min 30s / 1min 31s)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…1c45e.device (1min 31s / 1min 31s)[K[[0;1;31m TIME [0m] Timed out waiting for device dev-di…3f\x2d89dc\x2d6f58ac01c45e.device.
+[[0;1;33mDEPEND[0m] Dependency failed for /dev/disk/by-…c1500-1e68-463f-89dc-6f58ac01c45e.
+[[0;1;33mDEPEND[0m] Dependency failed for Swap.
+[[0;32m  OK  [0m] Reached target System Initialization.
+[[0;32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
+[[0;32m  OK  [0m] Listening on UUID daemon activation socket.
+[[0;32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
+[[0;32m  OK  [0m] Reached target Sockets.
+[[0;32m  OK  [0m] Reached target Basic System.
+         Starting LSB: Record successful boot for GRUB...
+[[0;32m  OK  [0m] Started Regular background program processing daemon.
+         Starting Accounts Service...
+[[0;32m  OK  [0m] Started Discard unused blocks once a week.
+[[0;32m  OK  [0m] Started irqbalance daemon.
+         Starting Dispatcher daemon for systemd-networkd...
+[[0;32m  OK  [0m] Started D-Bus System Message Bus.
+[[0;32m  OK  [0m] Started Ubuntu Advantage update messaging.
+         Starting System Logging Service...
+[[0;32m  OK  [0m] Started Set the CPU Frequency Scaling governor.
+         Starting Login Service...
+[[0;32m  OK  [0m] Started Daily apt download activities.
+[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.
+         Starting Permit User Sessions...
+         Starting OpenBSD Secure Shell server...
+[[0;32m  OK  [0m] Started Message of the Day.
+[[0;32m  OK  [0m] Reached target Timers.
+[[0;32m  OK  [0m] Started Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Started System Logging Service.
+[[0;32m  OK  [0m] Started Permit User Sessions.
+[[0;32m  OK  [0m] Started Accounts Service.
+[[0;32m  OK  [0m] Started OpenBSD Secure Shell server.
+[[0;32m  OK  [0m] Started LSB: Record successful boot for GRUB.
+[[0;32m  OK  [0m] Started Login Service.
+         Starting Hold until boot process finishes up...
+         Starting Terminate Plymouth Boot Screen...
+[[0;32m  OK  [0m] Started Hold until boot process finishes up.
+[[0;32m  OK  [0m] Started Terminate Plymouth Boot Screen.
+[[0;32m  OK  [0m] Started Serial Getty on ttyS0.
+         Starting Set console scheme...
+[[0;32m  OK  [0m] Started Set console scheme.
+[[0;32m  OK  [0m] Created slice system-getty.slice.
+[[0;32m  OK  [0m] Started Getty on tty1.
+[[0;32m  OK  [0m] Reached target Login Prompts.
+[[0;32m  OK  [0m] Reached target Multi-User System.
+[[0;32m  OK  [0m] Reached target Graphical Interface.
+[[0;32m  OK  [0m] Started Stop ureadahead data collection 45s after completed startup.
+         Starting Update UTMP about System Runlevel Changes...
+[[0;32m  OK  [0m] Started Update UTMP about System Runlevel Changes.
+
+Ubuntu 18.04.6 LTS ubuntu ttyS0
+
+ubuntu login: root (automatic login)
+
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.19.83 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+New release '20.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Invoking readfile commands...
+INFO: spec_main_live_pretend.c(120): Processing 24 beamsets
+INFO: cmd_ln.c(276): Parsing command line:
+INFO: kbcore.c(95): Initializing core models:
+INFO: logs3.c(99): Initializing logbase: 1.000300e+00 (add table: 1)
+INFO: logs3.c(161): Log-Add table size = 29350
+INFO: feat.c(642): Initializing feature stream to type: '1s_c_d_dd', CMN='current', VARNORM='no', AGC='none'
+INFO: mdef.c(594): Reading model definition: model/hmm/hub4/hub4opensrc.6000.mdef
+INFO: mdef.c(771): 48 CI-phone, 133500 CD-phone, 3 emitstate/phone, 144 CI-sen, 6144 Sen, 32639 Sen-Seq
+INFO: dict.c(358): Reading main dictionary: model/lm/an4/an4.dict
+INFO: dict.c(361): 130 words read
+INFO: dict.c(366): Reading filler dictionary: model/lm/an4/filler.dict
+INFO: dict.c(369): 3 words read
+INFO: lm.c(739): LM read('model/lm/an4/an4.ug.lm.DMP', lw= 9.50, wip= -1188, uw= 0.70)
+INFO: lm.c(553):      107 ug
+INFO: lm.c(583):        1 bigrams [on disk]
+INFO: lm.c(613):        2 bigram prob entries
+INFO: lm.c(696):      107 word strings
+INFO: wid.c(178): 6 LM words not in dictionary; ignored
+INFO: cont_mgau.c(96): Reading mixture gaussian file 'model/hmm/hub4/means'
+INFO: cont_mgau.c(248): 6144 mixture Gaussians, 8 components, 1 streams, veclen 39
+INFO: cont_mgau.c(96): Reading mixture gaussian file 'model/hmm/hub4/variances'
+INFO: cont_mgau.c(248): 6144 mixture Gaussians, 8 components, 1 streams, veclen 39
+INFO: cont_mgau.c(269): Reading mixture weights file 'model/hmm/hub4/mixture_weights'
+INFO: cont_mgau.c(362): Read 6144 x 8 mixture weights
+INFO: cont_mgau.c(378): Removing uninitialized Gaussian densities
+ 6 7 8
+INFO: cont_mgau.c(408): 24 densities removed (3 mixtures removed entirely)
+INFO: cont_mgau.c(416): Applying variance floor
+INFO: cont_mgau.c(428): 0 variance values floored
+INFO: cont_mgau.c(474): Precomputing Mahalanobis distance invariants
+INFO: subvq.c(199): Loading Mixture Gaussian sub-VQ file 'model/hmm/hub4/8gau.6000sen.quant' (vq_eval: 3)
+INFO: subvq.c(259): Original #codebooks(states)/codewords: 6144 x 8
+INFO: subvq.c(260): Subvectors: 3, VQsize: 4096
+INFO: subvq.c(262): SV 0 feature dims(13):   0  1  2  3  4  5  6  7  8  9 10 11 12
+INFO: subvq.c(262): SV 1 feature dims(13):  13 14 15 16 17 18 19 20 21 22 23 24 25
+INFO: subvq.c(262): SV 2 feature dims(13):  26 27 28 29 30 31 32 33 34 35 36 37 38
+INFO: subvq.c(271): Reading subvq 0
+INFO: subvq.c(273): Reading codebook
+INFO: subvq.c(293): Reading map
+INFO: subvq.c(271): Reading subvq 1
+INFO: subvq.c(273): Reading codebook
+INFO: subvq.c(293): Reading map
+INFO: subvq.c(271): Reading subvq 2
+INFO: subvq.c(273): Reading codebook
+INFO: subvq.c(293): Reading map
+INFO: subvq.c(103): Precomputing Mahalanobis distance invariants
+INFO: tmat.c(135): Reading HMM transition probability matrices: model/hmm/hub4/transition_matrices
+INFO: tmat.c(217): Read 48 transition matrices of size 3x4
+INFO: dict2pid.c(254): Building PID tables for dictionary
+INFO: dict2pid.c(422): 873 composite states; 324 composite sseq
+INFO: kbcore.c(225): Verifying models consistency:
+INFO: kb.c(197): Building lextrees
+INFO: kb.c(243): Creating Unigram Table
+INFO: kb.c(246): Size of word table after unigram + words in class: 99
+INFO: kb.c(263): Lextrees(3), 1428 nodes(ug)
+INFO: kb.c(291): Lextrees(3), 1 nodes(filler)
+INFO: kb.c(317): Beam= -460509, PBeam= -383758, WBeam= -268630, SVQBeam= -15350
+INFO: kb.c(322): Down Sampling Ratio = 1
+INFO: kb.c(328): Conditional Down Sampling Parameter = 0
+INFO: kb.c(333): GS map would be used for Gaussian Selection? = 1
+INFO: kb.c(336): SVQ would be used as Gaussian Score ?= 0
+INFO: kb.c(339): CI phone beam to prune the number of parent CI phones in CI-base GMM Selection = 939524096
+INFO: kb.c(341): Virtually no CI phone beam is applied now. (ci_pbeam>1000000)
+INFO: kb.c(345): Word-end pruning beam: 939524096
+INFO: kb.c(348): Phoneme look-ahead window size = 1
+INFO: kb.c(353): Phoneme look-ahead beam = -939524096
+INFO: vithist.c(77): Initializing Viterbi-history module
+32000 samples in ./an391-mjwl-b.raw will be decoded in blocks of 2000
+12800 samples in ./an392-mjwl-b.raw will be decoded in blocks of 2000
+40000 samples in ./an393-mjwl-b.raw will be decoded in blocks of 2000
+60800 samples in ./an394-mjwl-b.raw will be decoded in blocks of 2000
+30400 samples in ./an395-mjwl-b.raw will be decoded in blocks of 2000
+64000 samples in ./an396-miry-b.raw will be decoded in blocks of 2000
+44800 samples in ./an397-miry-b.raw will be decoded in blocks of 2000
+60800 samples in ./an398-miry-b.raw will be decoded in blocks of 2000
+73600 samples in ./an399-miry-b.raw will be decoded in blocks of 2000
+22400 samples in ./an400-miry-b.raw will be decoded in blocks of 2000
+52800 samples in ./an401-mdms2-b.raw will be decoded in blocks of 2000
+12800 samples in ./an402-mdms2-b.raw will be decoded in blocks of 2000
+62400 samples in ./an403-mdms2-b.raw will be decoded in blocks of 2000
+48000 samples in ./an404-mdms2-b.raw will be decoded in blocks of 2000
+86400 samples in ./an405-mdms2-b.raw will be decoded in blocks of 2000
+12800 samples in ./an416-fjlp-b.raw will be decoded in blocks of 2000
+40000 samples in ./an417-fjlp-b.raw will be decoded in blocks of 2000
+35200 samples in ./an418-fjlp-b.raw will be decoded in blocks of 2000
+38400 samples in ./an419-fjlp-b.raw will be decoded in blocks of 2000
+68800 samples in ./an420-fjlp-b.raw will be decoded in blocks of 2000
+24000 samples in ./an421-menk-b.raw will be decoded in blocks of 2000
+22400 samples in ./an422-menk-b.raw will be decoded in blocks of 2000
+57600 samples in ./an423-menk-b.raw will be decoded in blocks of 2000
+64000 samples in ./an424-menk-b.raw will be decoded in blocks of 2000
+38400 samples in ./an425-menk-b.raw will be decoded in blocks of 2000
+30400 samples in ./an426-fvap-b.raw will be decoded in blocks of 2000
+51200 samples in ./an427-fvap-b.raw will be decoded in blocks of 2000
+28800 samples in ./an428-fvap-b.raw will be decoded in blocks of 2000
+59200 samples in ./an429-fvap-b.raw will be decoded in blocks of 2000
+49600 samples in ./an430-fvap-b.raw will be decoded in blocks of 2000
+59200 samples in ./an431-marh-b.raw will be decoded in blocks of 2000
+33600 samples in ./an432-marh-b.raw will be decoded in blocks of 2000
+46400 samples in ./an433-marh-b.raw will be decoded in blocks of 2000
+70400 samples in ./an434-marh-b.raw will be decoded in blocks of 2000
+28800 samples in ./an435-marh-b.raw will be decoded in blocks of 2000
+25600 samples in ./an436-mjgm-b.raw will be decoded in blocks of 2000
+36800 samples in ./an437-mjgm-b.raw will be decoded in blocks of 2000
+43200 samples in ./an438-mjgm-b.raw will be decoded in blocks of 2000
+32000 samples in ./an439-mjgm-b.raw will be decoded in blocks of 2000
+12800 samples in ./an440-mjgm-b.raw will be decoded in blocks of 2000
+56000 samples in ./an441-mmxg-b.raw will be decoded in blocks of 2000
+14400 samples in ./an442-mmxg-b.raw will be decoded in blocks of 2000
+11200 samples in ./an443-mmxg-b.raw will be decoded in blocks of 2000
+67200 samples in ./an444-mmxg-b.raw will be decoded in blocks of 2000
+46400 samples in ./an445-mmxg-b.raw will be decoded in blocks of 2000
+44800 samples in ./cen1-fjlp-b.raw will be decoded in blocks of 2000
+33600 samples in ./cen1-fvap-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen1-marh-b.raw will be decoded in blocks of 2000
+70400 samples in ./cen1-mdms2-b.raw will be decoded in blocks of 2000
+49600 samples in ./cen1-menk-b.raw will be decoded in blocks of 2000
+49600 samples in ./cen1-miry-b.raw will be decoded in blocks of 2000
+28800 samples in ./cen1-mjgm-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen1-mjwl-b.raw will be decoded in blocks of 2000
+49600 samples in ./cen1-mmxg-b.raw will be decoded in blocks of 2000
+38400 samples in ./cen2-fjlp-b.raw will be decoded in blocks of 2000
+36800 samples in ./cen2-fvap-b.raw will be decoded in blocks of 2000
+24000 samples in ./cen2-marh-b.raw will be decoded in blocks of 2000
+49600 samples in ./cen2-mdms2-b.raw will be decoded in blocks of 2000
+32000 samples in ./cen2-menk-b.raw will be decoded in blocks of 2000
+32000 samples in ./cen2-miry-b.raw will be decoded in blocks of 2000
+22400 samples in ./cen2-mjgm-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen2-mjwl-b.raw will be decoded in blocks of 2000
+38400 samples in ./cen2-mmxg-b.raw will be decoded in blocks of 2000
+20800 samples in ./cen3-fjlp-b.raw will be decoded in blocks of 2000
+24000 samples in ./cen3-fvap-b.raw will be decoded in blocks of 2000
+25600 samples in ./cen3-marh-b.raw will be decoded in blocks of 2000
+19200 samples in ./cen3-mdms2-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen3-menk-b.raw will be decoded in blocks of 2000
+28800 samples in ./cen3-miry-b.raw will be decoded in blocks of 2000
+22400 samples in ./cen3-mjgm-b.raw will be decoded in blocks of 2000
+16000 samples in ./cen3-mjwl-b.raw will be decoded in blocks of 2000
+22400 samples in ./cen3-mmxg-b.raw will be decoded in blocks of 2000
+36800 samples in ./cen4-fjlp-b.raw will be decoded in blocks of 2000
+46400 samples in ./cen4-fvap-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen4-marh-b.raw will be decoded in blocks of 2000
+96000 samples in ./cen4-mdms2-b.raw will be decoded in blocks of 2000
+62400 samples in ./cen4-menk-b.raw will be decoded in blocks of 2000
+62400 samples in ./cen4-miry-b.raw will be decoded in blocks of 2000
+44800 samples in ./cen4-mjgm-b.raw will be decoded in blocks of 2000
+40000 samples in ./cen4-mjwl-b.raw will be decoded in blocks of 2000
+76800 samples in ./cen4-mmxg-b.raw will be decoded in blocks of 2000
+80000 samples in ./cen5-fjlp-b.raw will be decoded in blocks of 2000
+49600 samples in ./cen5-fvap-b.raw will be decoded in blocks of 2000
+56000 samples in ./cen5-marh-b.raw will be decoded in blocks of 2000
+86400 samples in ./cen5-mdms2-b.raw will be decoded in blocks of 2000
+68800 samples in ./cen5-menk-b.raw will be decoded in blocks of 2000
+78400 samples in ./cen5-miry-b.raw will be decoded in blocks of 2000
+56000 samples in ./cen5-mjgm-b.raw will be decoded in blocks of 2000
+48000 samples in ./cen5-mjwl-b.raw will be decoded in blocks of 2000
+49600 samples in ./cen5-mmxg-b.raw will be decoded in blocks of 2000
+36800 samples in ./cen6-fjlp-b.raw will be decoded in blocks of 2000
+25600 samples in ./cen6-fvap-b.raw will be decoded in blocks of 2000
+33600 samples in ./cen6-marh-b.raw will be decoded in blocks of 2000
+51200 samples in ./cen6-mdms2-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen6-menk-b.raw will be decoded in blocks of 2000
+41600 samples in ./cen6-miry-b.raw will be decoded in blocks of 2000
+36800 samples in ./cen6-mjgm-b.raw will be decoded in blocks of 2000
+30400 samples in ./cen6-mjwl-b.raw will be decoded in blocks of 2000
+33600 samples in ./cen6-mmxg-b.raw will be decoded in blocks of 2000
+52800 samples in ./cen7-fjlp-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen7-fvap-b.raw will be decoded in blocks of 2000
+48000 samples in ./cen7-marh-b.raw will be decoded in blocks of 2000
+92800 samples in ./cen7-mdms2-b.raw will be decoded in blocks of 2000
+46400 samples in ./cen7-menk-b.raw will be decoded in blocks of 2000
+56000 samples in ./cen7-miry-b.raw will be decoded in blocks of 2000
+40000 samples in ./cen7-mjgm-b.raw will be decoded in blocks of 2000
+38400 samples in ./cen7-mjwl-b.raw will be decoded in blocks of 2000
+62400 samples in ./cen7-mmxg-b.raw will be decoded in blocks of 2000
+40000 samples in ./cen8-fjlp-b.raw will be decoded in blocks of 2000
+35200 samples in ./cen8-fvap-b.raw will be decoded in blocks of 2000
+38400 samples in ./cen8-marh-b.raw will be decoded in blocks of 2000
+46400 samples in ./cen8-mdms2-b.raw will be decoded in blocks of 2000
+40000 samples in ./cen8-menk-b.raw will be decoded in blocks of 2000
+44800 samples in ./cen8-miry-b.raw will be decoded in blocks of 2000
+28800 samples in ./cen8-mjgm-b.raw will be decoded in blocks of 2000
+36800 samples in ./cen8-mjwl-b.raw will be decoded in blocks of 2000
+36800 samples in ./cen8-mmxg-b.raw will be decoded in blocks of 2000
+INFO: spec_main_live_pretend.c(172): Beam= -460509, PBeam= -460509, WBeam= -230254, SVQBeam= -153503
+INFO: feat.c(971): Feature buffers initialized to 256 vectors
+INFO: cmn_prior.c(72): mean[0]= 12.00, mean[1..12]= 0.0
+
+Backtrace(an391-mjwl-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    40     0    35     -200885   -74100   -1 <sil>
+   398    36    62     -700690  -148846    0 EIGHTY
+  1181    63    97     -628933   -74100   -1 <sil>
+  1502    98   127     -448924  -148846    0 NINE
+  1620   128   135     -203707   -74100   -1 <sil>
+  1977   136   152     -237933  -148846    0 EIGHT
+  2436   153   197     -734671   -74100   -1 <sil>
+  2438   198   198           0  -148846    0 </s>
+           0   198    -3155743  -891784 (Total)
+
+FWDVIT: 'EIGHTY NINE EIGHT ' (an391-mjwl-b)
+
+FWDXCT: an391-mjwl-b S 0 T -4047527 A -3155743 L -891784 0 -200885 -74100 <sil> 36 -700690 -148846 EIGHTY 63 -628933 -74100 <sil> 98 -448924 -148846 NINE 128 -203707 -74100 <sil> 136 -237933 -148846 EIGHT 153 -734671 -74100 <sil> 198
+
+INFO: utt.c(337):  198 frm;  1601 sen, 10116 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    739 hmm,  12 wd/fr, 0.00 CPU 0.00 Clk (an391-mjwl-b)
+INFO: utt.c(375): HMMHist[0..0](an391-mjwl-b): 16(8)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    28182 bg(),    28178 bo;     1 fills,        1 in mem (50.0%)
+
+Backtrace(an392-mjwl-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    41     0    35     -311054   -74100   -1 <sil>
+   274    36    71     -391417  -148846    0 REPEAT
+   287    72    80     -113156   -74100   -1 <sil>
+   289    81    81           0  -148846    0 </s>
+           0    81     -815627  -445892 (Total)
+
+FWDVIT: 'REPEAT ' (an392-mjwl-b)
+
+FWDXCT: an392-mjwl-b S 0 T -1261519 A -815627 L -445892 0 -311054 -74100 <sil> 36 -391417 -148846 REPEAT 72 -113156 -74100 <sil> 81
+
+INFO: utt.c(337):   81 frm;  1118 sen,  7518 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    338 hmm,   4 wd/fr, 0.00 CPU 0.00 Clk (an392-mjwl-b)
+INFO: utt.c(375): HMMHist[0..0](an392-mjwl-b): 8(9)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     1105 bg(),     1101 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an393-mjwl-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    28     0    29     -112840   -74100   -1 <sil>
+   426    30    78     -782563  -148846    0 ERASE(2)
+   480    79    87     -165595  -148846    0 P
+  1838    88   119     -620615  -148846    0 U
+  2814   120   140     -367463  -148846    0 D
+  3660   141   170     -456524  -148846    0 B
+  4220   171   192     -262991  -148846    0 E
+  4563   193   206     -345460   -74100   -1 <sil>
+  5621   207   233     -431548  -148846    0 I
+  6251   234   250     -309720   -74100   -1 <sil>
+  6253   251   251           0  -148846    0 </s>
+           0   251    -3855319 -1413068 (Total)
+
+FWDVIT: 'ERASE P U D B E I ' (an393-mjwl-b)
+
+FWDXCT: an393-mjwl-b S 0 T -5268387 A -3855319 L -1413068 0 -112840 -74100 <sil> 30 -782563 -148846 ERASE(2) 79 -165595 -148846 P 88 -620615 -148846 U 120 -367463 -148846 D 141 -456524 -148846 B 171 -262991 -148846 E 193 -345460 -74100 <sil> 207 -431548 -148846 I 234 -309720 -74100 <sil> 251
+
+INFO: utt.c(337):  251 frm;  1537 sen, 11129 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    715 hmm,  25 wd/fr, 0.00 CPU 0.00 Clk (an393-mjwl-b)
+INFO: utt.c(375): HMMHist[0..0](an393-mjwl-b): 16(6)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):   142768 bg(),   142765 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an394-mjwl-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    38     0    30     -270458   -74100   -1 <sil>
+   317    31    84     -509510  -148846    0 RUBOUT
+   369    85   129     -584840   -74100   -1 <sil>
+   671   130   172     -676212  -148846    0 U
+   752   173   190     -179031   -74100   -1 <sil>
+  1304   191   227     -464369  -148846    0 E
+  1876   228   261     -488641  -148846    0 U
+  2095   262   296     -598411  -148846    0 T
+  2388   297   315     -272355  -148846    0 I
+  3199   316   370     -800194  -148846    0 SIXTH
+  3243   371   380      -84533   -74100   -1 <sil>
+  3245   381   381           0  -148846    0 </s>
+           0   381    -4928554 -1487168 (Total)
+
+FWDVIT: 'RUBOUT U E U T I SIXTH ' (an394-mjwl-b)
+
+FWDXCT: an394-mjwl-b S 0 T -6415722 A -4928554 L -1487168 0 -270458 -74100 <sil> 31 -509510 -148846 RUBOUT 85 -584840 -74100 <sil> 130 -676212 -148846 U 173 -179031 -74100 <sil> 191 -464369 -148846 E 228 -488641 -148846 U 262 -598411 -148846 T 297 -272355 -148846 I 316 -800194 -148846 SIXTH 371 -84533 -74100 <sil> 381
+
+INFO: utt.c(337):  381 frm;  1342 sen,  9936 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    494 hmm,   9 wd/fr, 0.00 CPU 0.00 Clk (an394-mjwl-b)
+INFO: utt.c(375): HMMHist[0..0](an394-mjwl-b): 8(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    28794 bg(),    28791 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an395-mjwl-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    43     0    35      -80149   -74100   -1 <sil>
+   161    36    71     -617200  -148846    0 ENTER(2)
+   448    72   106     -477907  -148846    0 ONE
+  1664   107   136     -542807  -148846    0 OH
+  2434   137   179     -556553  -148846    0 FOUR
+  2610   180   190     -178900   -74100   -1 <sil>
+  2620   191   191           0  -148846    0 </s>
+           0   191    -2453516  -892430 (Total)
+
+FWDVIT: 'ENTER ONE OH FOUR ' (an395-mjwl-b)
+
+FWDXCT: an395-mjwl-b S 0 T -3345946 A -2453516 L -892430 0 -80149 -74100 <sil> 36 -617200 -148846 ENTER(2) 72 -477907 -148846 ONE 107 -542807 -148846 OH 137 -556553 -148846 FOUR 180 -178900 -74100 <sil> 191
+
+INFO: utt.c(337):  191 frm;  1521 sen, 11072 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    683 hmm,  14 wd/fr, 0.00 CPU 0.00 Clk (an395-mjwl-b)
+INFO: utt.c(375): HMMHist[0..0](an395-mjwl-b): 6(3)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    58225 bg(),    58222 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an396-miry-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+   158     0    36     -635082   -74100   -1 <sil>
+   490    37    91    -1060700  -148846    0 ERASE
+   618    92   121     -426786   -74100   -1 <sil>
+  1025   122   153     -520192  -148846    0 EIGHT
+  1497   154   174     -359707  -148846    0 B
+  1618   175   178     -105795   -74100   -1 <sil>
+  2305   179   211     -443386  -148846    0 F
+  2406   212   220     -180175   -74100   -1 <sil>
+  2905   221   247     -421850  -148846    0 N
+  3695   248   294     -559717  -148846    0 Q
+  3885   295   306     -158528   -74100   -1 <sil>
+  4128   307   345     -376425  -148846    0 FIFTY
+  4240   346   384     -279432  -148846    0 SEVEN
+  4305   385   400      -87471   -74100   -1 <sil>
+  4307   401   401           0  -148846    0 </s>
+           0   401    -5615246 -1784214 (Total)
+
+FWDVIT: 'ERASE EIGHT B F N Q FIFTY SEVEN ' (an396-miry-b)
+
+FWDXCT: an396-miry-b S 0 T -7399460 A -5615246 L -1784214 0 -635082 -74100 <sil> 37 -1060700 -148846 ERASE 92 -426786 -74100 <sil> 122 -520192 -148846 EIGHT 154 -359707 -148846 B 175 -105795 -74100 <sil> 179 -443386 -148846 F 212 -180175 -74100 <sil> 221 -421850 -148846 N 248 -559717 -148846 Q 295 -158528 -74100 <sil> 307 -376425 -148846 FIFTY 346 -279432 -148846 SEVEN 385 -87471 -74100 <sil> 401
+
+INFO: utt.c(337):  401 frm;  1605 sen, 11451 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    761 hmm,  11 wd/fr, 0.00 CPU 0.00 Clk (an396-miry-b)
+INFO: utt.c(375): HMMHist[0..0](an396-miry-b): 16(3)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    50043 bg(),    50039 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an397-miry-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    64     0    29     -235323   -74100   -1 <sil>
+   144    30    49     -211632  -148846    0 T
+   306    50    64     -215127  -148846    0 EIGHT
+   589    65    83     -354475  -148846    0 R
+   854    84   126     -572618  -148846    0 T
+   948   127   138     -173914   -74100   -1 <sil>
+  1267   139   165     -549457  -148846    0 F
+  2185   166   204     -689254  -148846    0 Y
+  2303   205   226     -159318   -74100   -1 <sil>
+  2425   227   268     -427956  -148846    0 SEVEN
+  2462   269   280      -91040   -74100   -1 <sil>
+  2464   281   281           0  -148846    0 </s>
+           0   281    -3680114 -1487168 (Total)
+
+FWDVIT: 'T EIGHT R T F Y SEVEN ' (an397-miry-b)
+
+FWDXCT: an397-miry-b S 0 T -5167282 A -3680114 L -1487168 0 -235323 -74100 <sil> 30 -211632 -148846 T 50 -215127 -148846 EIGHT 65 -354475 -148846 R 84 -572618 -148846 T 127 -173914 -74100 <sil> 139 -549457 -148846 F 166 -689254 -148846 Y 205 -159318 -74100 <sil> 227 -427956 -148846 SEVEN 269 -91040 -74100 <sil> 281
+
+INFO: utt.c(337):  281 frm;  1402 sen,  9942 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    556 hmm,   9 wd/fr, 0.00 CPU 0.00 Clk (an397-miry-b)
+INFO: utt.c(375): HMMHist[0..0](an397-miry-b): 8(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    22881 bg(),    22878 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an398-miry-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+   135     0    32     -517793   -74100   -1 <sil>
+   411    33    83     -822569  -148846    0 RUBOUT
+   450    84    94     -132117   -74100   -1 <sil>
+   730    95   139     -545096  -148846    0 C
+   808   140   150     -177947   -74100   -1 <sil>
+  1071   151   188     -542555  -148846    0 B
+  1161   189   195     -121049   -74100   -1 <sil>
+  1562   196   212     -455857  -148846    0 GO
+  2068   213   226     -240782  -148846    0 U
+  2264   227   232     -223990   -74100   -1 <sil>
+  2861   233   261     -252036  -148846    0 X
+  3007   262   273     -328634   -74100   -1 <sil>
+  5557   274   304     -515892  -148846    0 C
+  6980   305   325     -372817   -74100   -1 <sil>
+  7817   326   368     -404689  -148846    0 FOUR
+  7924   369   380     -119560   -74100   -1 <sil>
+  7926   381   381           0  -148846    0 </s>
+           0   381    -5773383 -1932414 (Total)
+
+FWDVIT: 'RUBOUT C B GO U X C FOUR ' (an398-miry-b)
+
+FWDXCT: an398-miry-b S 0 T -7705797 A -5773383 L -1932414 0 -517793 -74100 <sil> 33 -822569 -148846 RUBOUT 84 -132117 -74100 <sil> 95 -545096 -148846 C 140 -177947 -74100 <sil> 151 -542555 -148846 B 189 -121049 -74100 <sil> 196 -455857 -148846 GO 213 -240782 -148846 U 227 -223990 -74100 <sil> 233 -252036 -148846 X 262 -328634 -74100 <sil> 274 -515892 -148846 C 305 -372817 -74100 <sil> 326 -404689 -148846 FOUR 369 -119560 -74100 <sil> 381
+
+INFO: utt.c(337):  381 frm;  1505 sen, 10800 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    700 hmm,  21 wd/fr, 0.00 CPU 0.00 Clk (an398-miry-b)
+INFO: utt.c(375): HMMHist[0..0](an398-miry-b): 8(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):   129910 bg(),   129906 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an399-miry-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    51     0    30     -434674   -74100   -1 <sil>
+   422    31    77    -1049467  -148846    0 W
+   689    78   117     -572547  -148846    0 Y
+   766   118   123     -119391   -74100   -1 <sil>
+  2039   124   198     -996518  -148846    0 EIGHTEEN
+  2498   199   229     -332304  -148846    0 U
+  2603   230   247     -217567   -74100   -1 <sil>
+  2622   248   266     -131870   -74100   -1 <sil>
+  2688   267   309     -334004  -148846    0 SEVENTY
+  2790   310   353     -391354  -148846    0 SEVEN
+  2883   354   364     -268173   -74100   -1 <sil>
+  3642   365   412     -470124  -148846    0 SEVENTY
+  3789   413   451     -242728  -148846    0 SEVENTH
+  3820   452   460     -102441   -74100   -1 <sil>
+  3824   461   461           0  -148846    0 </s>
+           0   461    -5663162 -1784214 (Total)
+
+FWDVIT: 'W Y EIGHTEEN U SEVENTY SEVEN SEVENTY SEVENTH ' (an399-miry-b)
+
+FWDXCT: an399-miry-b S 0 T -7447376 A -5663162 L -1784214 0 -434674 -74100 <sil> 31 -1049467 -148846 W 78 -572547 -148846 Y 118 -119391 -74100 <sil> 124 -996518 -148846 EIGHTEEN 199 -332304 -148846 U 230 -217567 -74100 <sil> 248 -131870 -74100 <sil> 267 -334004 -148846 SEVENTY 310 -391354 -148846 SEVEN 354 -268173 -74100 <sil> 365 -470124 -148846 SEVENTY 413 -242728 -148846 SEVENTH 452 -102441 -74100 <sil> 461
+
+INFO: utt.c(337):  461 frm;  1179 sen,  8644 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    439 hmm,   8 wd/fr, 0.00 CPU 0.00 Clk (an399-miry-b)
+INFO: utt.c(375): HMMHist[0..0](an399-miry-b): 13(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    27742 bg(),    27739 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an400-miry-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+   136     0    31     -428829   -74100   -1 <sil>
+   300    32    75     -782249  -148846    0 ENTER(2)
+   325    76    86     -101324   -74100   -1 <sil>
+   496    87   119     -513658  -148846    0 EIGHT
+   721   120   140     -200826   -74100   -1 <sil>
+   723   141   141           0  -148846    0 </s>
+           0   141    -2026886  -668838 (Total)
+
+FWDVIT: 'ENTER EIGHT ' (an400-miry-b)
+
+FWDXCT: an400-miry-b S 0 T -2695724 A -2026886 L -668838 0 -428829 -74100 <sil> 32 -782249 -148846 ENTER(2) 76 -101324 -74100 <sil> 87 -513658 -148846 EIGHT 120 -200826 -74100 <sil> 141
+
+INFO: utt.c(337):  141 frm;  1619 sen, 11576 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    732 hmm,   5 wd/fr, 0.00 CPU 0.00 Clk (an400-miry-b)
+INFO: utt.c(375): HMMHist[0..0](an400-miry-b): 6(4)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     4734 bg(),     4731 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an401-mdms2-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    45     0    34     -156652   -74100   -1 <sil>
+   389    35    84     -872239  -148846    0 ENTER(2)
+   421    85   100     -123135   -74100   -1 <sil>
+   541   101   152     -533574  -148846    0 SEVEN
+   650   153   164     -269108   -74100   -1 <sil>
+  1203   165   202     -510421  -148846    0 ONE
+  1378   203   215     -260888   -74100   -1 <sil>
+  1980   216   266     -801128  -148846    0 FIVE
+  2078   267   278     -172877   -74100   -1 <sil>
+  2456   279   323     -708715  -148846    0 FOUR
+  2485   324   330      -47947   -74100   -1 <sil>
+  2487   331   331           0  -148846    0 </s>
+           0   331    -4456684 -1337676 (Total)
+
+FWDVIT: 'ENTER SEVEN ONE FIVE FOUR ' (an401-mdms2-b)
+
+FWDXCT: an401-mdms2-b S 0 T -5794360 A -4456684 L -1337676 0 -156652 -74100 <sil> 35 -872239 -148846 ENTER(2) 85 -123135 -74100 <sil> 101 -533574 -148846 SEVEN 153 -269108 -74100 <sil> 165 -510421 -148846 ONE 203 -260888 -74100 <sil> 216 -801128 -148846 FIVE 267 -172877 -74100 <sil> 279 -708715 -148846 FOUR 324 -47947 -74100 <sil> 331
+
+INFO: utt.c(337):  331 frm;  1570 sen, 11531 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    703 hmm,   8 wd/fr, 0.00 CPU 0.00 Clk (an401-mdms2-b)
+INFO: utt.c(375): HMMHist[0..0](an401-mdms2-b): 8(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    14899 bg(),    14895 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an402-mdms2-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    48     0    32     -342911   -74100   -1 <sil>
+   431    33    64     -545624  -148846    0 NO
+   536    65    80     -136886   -74100   -1 <sil>
+   538    81    81           0  -148846    0 </s>
+           0    81    -1025421  -445892 (Total)
+
+FWDVIT: 'NO ' (an402-mdms2-b)
+
+FWDXCT: an402-mdms2-b S 0 T -1471313 A -1025421 L -445892 0 -342911 -74100 <sil> 33 -545624 -148846 NO 65 -136886 -74100 <sil> 81
+
+INFO: utt.c(337):   81 frm;  1517 sen, 11151 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    617 hmm,   7 wd/fr, 0.00 CPU 0.00 Clk (an402-mdms2-b)
+INFO: utt.c(375): HMMHist[0..0](an402-mdms2-b): 8(9)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     5649 bg(),     5645 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an403-mdms2-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    56     0    34     -276516   -74100   -1 <sil>
+   123    35    71     -394298  -148846    0 G
+   774    72   108     -602852  -148846    0 S
+   862   109   115      -99073   -74100   -1 <sil>
+  1157   116   146     -514937  -148846    0 T
+  2374   147   195     -713914  -148846    0 Q
+  2634   196   222     -215805   -74100   -1 <sil>
+  2898   223   263     -727921  -148846    0 ONE
+  3849   264   299     -420107  -148846    0 THREE
+  4185   300   335     -428331  -148846    0 THREE
+  4461   336   374     -655402  -148846    0 TWO
+  4565   375   390     -120758   -74100   -1 <sil>
+  4567   391   391           0  -148846    0 </s>
+           0   391    -5169914 -1636014 (Total)
+
+FWDVIT: 'G S T Q ONE THREE THREE TWO ' (an403-mdms2-b)
+
+FWDXCT: an403-mdms2-b S 0 T -6805928 A -5169914 L -1636014 0 -276516 -74100 <sil> 35 -394298 -148846 G 72 -602852 -148846 S 109 -99073 -74100 <sil> 116 -514937 -148846 T 147 -713914 -148846 Q 196 -215805 -74100 <sil> 223 -727921 -148846 ONE 264 -420107 -148846 THREE 300 -428331 -148846 THREE 336 -655402 -148846 TWO 375 -120758 -74100 <sil> 391
+
+INFO: utt.c(337):  391 frm;  1502 sen, 11055 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    701 hmm,  12 wd/fr, 0.00 CPU 0.00 Clk (an403-mdms2-b)
+INFO: utt.c(375): HMMHist[0..0](an403-mdms2-b): 6(1)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    52310 bg(),    52307 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an404-mdms2-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    55     0    24     -288895   -74100   -1 <sil>
+   614    25    58     -536150  -148846    0 L
+   951    59    91     -387012  -148846    0 K
+  1179    92   132     -450904  -148846    0 K
+  1226   133   137     -132504   -74100   -1 <sil>
+  2307   138   190     -800912  -148846    0 ENTER
+  2470   191   204     -144771   -74100   -1 <sil>
+  2687   205   245     -326150  -148846    0 THIRTY
+  2988   246   280     -545558  -148846    0 EIGHTH
+  3060   281   300     -158223   -74100   -1 <sil>
+  3062   301   301           0  -148846    0 </s>
+           0   301    -3771079 -1338322 (Total)
+
+FWDVIT: 'L K K ENTER THIRTY EIGHTH ' (an404-mdms2-b)
+
+FWDXCT: an404-mdms2-b S 0 T -5109401 A -3771079 L -1338322 0 -288895 -74100 <sil> 25 -536150 -148846 L 59 -387012 -148846 K 92 -450904 -148846 K 133 -132504 -74100 <sil> 138 -800912 -148846 ENTER 191 -144771 -74100 <sil> 205 -326150 -148846 THIRTY 246 -545558 -148846 EIGHTH 281 -158223 -74100 <sil> 301
+
+INFO: utt.c(337):  301 frm;  1543 sen, 11246 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    732 hmm,  10 wd/fr, 0.00 CPU 0.00 Clk (an404-mdms2-b)
+INFO: utt.c(375): HMMHist[0..0](an404-mdms2-b): 16(5)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    40314 bg(),    40311 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an405-mdms2-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    86     0    33     -439468   -74100   -1 <sil>
+   567    34    87     -865843  -148846    0 RUBOUT
+   749    88   122     -379910   -74100   -1 <sil>
+  1019   123   159     -505842  -148846    0 B
+  1569   160   212     -814010  -148846    0 C
+  1650   213   221      -86920   -74100   -1 <sil>
+  1704   222   234     -230029  -148846    0 G
+  2024   235   267     -411998  -148846    0 EIGHT
+  3027   268   305     -433262  -148846    0 H
+  3198   306   344     -540680  -148846    0 P
+  3272   345   389     -258311   -74100   -1 <sil>
+  3364   390   435     -523820  -148846    0 SEVEN
+  3532   436   462     -243941  -148846    0 THIRTY
+  3843   463   516     -530089  -148846    0 SIX
+  3903   517   540     -229823   -74100   -1 <sil>
+  3905   541   541           0  -148846    0 </s>
+           0   541    -6493946 -2007806 (Total)
+
+FWDVIT: 'RUBOUT B C G EIGHT H P SEVEN THIRTY SIX ' (an405-mdms2-b)
+
+FWDXCT: an405-mdms2-b S 0 T -8501752 A -6493946 L -2007806 0 -439468 -74100 <sil> 34 -865843 -148846 RUBOUT 88 -379910 -74100 <sil> 123 -505842 -148846 B 160 -814010 -148846 C 213 -86920 -74100 <sil> 222 -230029 -148846 G 235 -411998 -148846 EIGHT 268 -433262 -148846 H 306 -540680 -148846 P 345 -258311 -74100 <sil> 390 -523820 -148846 SEVEN 436 -243941 -148846 THIRTY 463 -530089 -148846 SIX 517 -229823 -74100 <sil> 541
+
+INFO: utt.c(337):  541 frm;  1282 sen,  9261 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    507 hmm,   7 wd/fr, 0.00 CPU 0.00 Clk (an405-mdms2-b)
+INFO: utt.c(375): HMMHist[0..0](an405-mdms2-b): 6(1)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    41160 bg(),    41156 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an416-fjlp-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    45     0    34     -252296   -74100   -1 <sil>
+   142    35    66     -529822  -148846    0 NO
+   295    67    80     -227181   -74100   -1 <sil>
+   297    81    81           0  -148846    0 </s>
+           0    81    -1009299  -445892 (Total)
+
+FWDVIT: 'NO ' (an416-fjlp-b)
+
+FWDXCT: an416-fjlp-b S 0 T -1455191 A -1009299 L -445892 0 -252296 -74100 <sil> 35 -529822 -148846 NO 67 -227181 -74100 <sil> 81
+
+INFO: utt.c(337):   81 frm;  1506 sen, 11554 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    607 hmm,   4 wd/fr, 0.00 CPU 0.00 Clk (an416-fjlp-b)
+INFO: utt.c(375): HMMHist[0..0](an416-fjlp-b): 8(9)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     1416 bg(),     1413 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an417-fjlp-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    76     0    28     -341961   -74100   -1 <sil>
+   275    29    83     -877270  -148846    0 ENTER(2)
+   333    84    90     -186227   -74100   -1 <sil>
+   871    91   127     -345637  -148846    0 NINE
+  1305   128   155     -400620  -148846    0 ONE
+  1473   156   189     -359441  -148846    0 SIX
+  1781   190   230     -541758  -148846    0 NINE
+  2053   231   250     -392044   -74100   -1 <sil>
+  2055   251   251           0  -148846    0 </s>
+           0   251    -3444958 -1115376 (Total)
+
+FWDVIT: 'ENTER NINE ONE SIX NINE ' (an417-fjlp-b)
+
+FWDXCT: an417-fjlp-b S 0 T -4560334 A -3444958 L -1115376 0 -341961 -74100 <sil> 29 -877270 -148846 ENTER(2) 84 -186227 -74100 <sil> 91 -345637 -148846 NINE 128 -400620 -148846 ONE 156 -359441 -148846 SIX 190 -541758 -148846 NINE 231 -392044 -74100 <sil> 251
+
+INFO: utt.c(337):  251 frm;  1518 sen, 11200 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    666 hmm,   8 wd/fr, 0.00 CPU 0.00 Clk (an417-fjlp-b)
+INFO: utt.c(375): HMMHist[0..0](an417-fjlp-b): 16(6)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    18654 bg(),    18651 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an418-fjlp-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    45     0    36     -320856   -74100   -1 <sil>
+   406    37    85     -845168  -148846    0 ENTER(2)
+   480    86    92     -173407   -74100   -1 <sil>
+   928    93   119     -291867  -148846    0 EIGHT
+  1398   120   159     -347356  -148846    0 NINETY
+  1894   160   205     -541934  -148846    0 SEVEN
+  2117   206   220     -182522   -74100   -1 <sil>
+  2125   221   221           0  -148846    0 </s>
+           0   221    -2703110  -966530 (Total)
+
+FWDVIT: 'ENTER EIGHT NINETY SEVEN ' (an418-fjlp-b)
+
+FWDXCT: an418-fjlp-b S 0 T -3669640 A -2703110 L -966530 0 -320856 -74100 <sil> 37 -845168 -148846 ENTER(2) 86 -173407 -74100 <sil> 93 -291867 -148846 EIGHT 120 -347356 -148846 NINETY 160 -541934 -148846 SEVEN 206 -182522 -74100 <sil> 221
+
+INFO: utt.c(337):  221 frm;  1407 sen, 10133 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    562 hmm,  10 wd/fr, 0.00 CPU 0.00 Clk (an418-fjlp-b)
+INFO: utt.c(375): HMMHist[0..0](an418-fjlp-b): 11(4)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    17902 bg(),    17898 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an419-fjlp-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    64     0    26     -435333   -74100   -1 <sil>
+   190    27    61     -482288  -148846    0 J
+   447    62    95     -502289  -148846    0 P
+   630    96   117     -345067  -148846    0 E
+   851   118   161     -547051  -148846    0 G
+   949   162   171     -225351   -74100   -1 <sil>
+  2114   172   231     -954372  -148846    0 FOUR
+  2306   232   240      -91333   -74100   -1 <sil>
+  2310   241   241           0  -148846    0 </s>
+           0   241    -3583084 -1115376 (Total)
+
+FWDVIT: 'J P E G FOUR ' (an419-fjlp-b)
+
+FWDXCT: an419-fjlp-b S 0 T -4698460 A -3583084 L -1115376 0 -435333 -74100 <sil> 27 -482288 -148846 J 62 -502289 -148846 P 96 -345067 -148846 E 118 -547051 -148846 G 162 -225351 -74100 <sil> 172 -954372 -148846 FOUR 232 -91333 -74100 <sil> 241
+
+INFO: utt.c(337):  241 frm;  1403 sen, 10233 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    573 hmm,  10 wd/fr, 0.00 CPU 0.00 Clk (an419-fjlp-b)
+INFO: utt.c(375): HMMHist[0..0](an419-fjlp-b): 6(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    17679 bg(),    17676 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an420-fjlp-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    69     0    31     -336804   -74100   -1 <sil>
+   566    32   102     -985514  -148846    0 ERASE(2)
+   664   103   125     -305269   -74100   -1 <sil>
+   789   126   164     -289766  -148846    0 X
+   824   165   170     -166083   -74100   -1 <sil>
+  1124   171   201     -494571  -148846    0 EIGHT
+  1602   202   228     -318747  -148846    0 G
+  2076   229   251     -304900  -148846    0 AND
+  2751   252   286     -492576  -148846    0 K
+  2942   287   293     -121419   -74100   -1 <sil>
+  3969   294   335     -536759  -148846    0 SIX
+  4314   336   362     -379154  -148846    0 THIRTY
+  4747   363   413     -698520  -148846    0 FIVE
+  4807   414   430     -244982   -74100   -1 <sil>
+  4809   431   431           0  -148846    0 </s>
+           0   431    -5675064 -1858960 (Total)
+
+FWDVIT: 'ERASE X EIGHT G AND K SIX THIRTY FIVE ' (an420-fjlp-b)
+
+FWDXCT: an420-fjlp-b S 0 T -7534024 A -5675064 L -1858960 0 -336804 -74100 <sil> 32 -985514 -148846 ERASE(2) 103 -305269 -74100 <sil> 126 -289766 -148846 X 165 -166083 -74100 <sil> 171 -494571 -148846 EIGHT 202 -318747 -148846 G 229 -304900 -148846 AND 252 -492576 -148846 K 287 -121419 -74100 <sil> 294 -536759 -148846 SIX 336 -379154 -148846 THIRTY 363 -698520 -148846 FIVE 414 -244982 -74100 <sil> 431
+
+INFO: utt.c(337):  431 frm;  1434 sen, 10522 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    607 hmm,  11 wd/fr, 0.00 CPU 0.00 Clk (an420-fjlp-b)
+INFO: utt.c(375): HMMHist[0..0](an420-fjlp-b): 8(1)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    68356 bg(),    68353 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an421-menk-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    64     0    34     -427414   -74100   -1 <sil>
+   351    35    68     -529635  -148846    0 ENTER(2)
+   573    69   102     -363757  -148846    0 TWENTY
+  1083   103   139     -689645  -148846    0 ONE
+  1125   140   150     -101085   -74100   -1 <sil>
+  1128   151   151           0  -148846    0 </s>
+           0   151    -2111536  -743584 (Total)
+
+FWDVIT: 'ENTER TWENTY ONE ' (an421-menk-b)
+
+FWDXCT: an421-menk-b S 0 T -2855120 A -2111536 L -743584 0 -427414 -74100 <sil> 35 -529635 -148846 ENTER(2) 69 -363757 -148846 TWENTY 103 -689645 -148846 ONE 140 -101085 -74100 <sil> 151
+
+INFO: utt.c(337):  151 frm;  1431 sen, 10062 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    610 hmm,   7 wd/fr, 0.00 CPU 0.00 Clk (an421-menk-b)
+INFO: utt.c(375): HMMHist[0..0](an421-menk-b): 16(10)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     8496 bg(),     8493 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an422-menk-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    45     0    35     -287210   -74100   -1 <sil>
+   347    36    75     -685926  -148846    0 ENTER(2)
+   683    76   129     -669807  -148846    0 THIRTY
+   756   130   140     -131727   -74100   -1 <sil>
+   759   141   141           0  -148846    0 </s>
+           0   141    -1774670  -594738 (Total)
+
+FWDVIT: 'ENTER THIRTY ' (an422-menk-b)
+
+FWDXCT: an422-menk-b S 0 T -2369408 A -1774670 L -594738 0 -287210 -74100 <sil> 36 -685926 -148846 ENTER(2) 76 -669807 -148846 THIRTY 130 -131727 -74100 <sil> 141
+
+INFO: utt.c(337):  141 frm;  1323 sen,  9160 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    507 hmm,   5 wd/fr, 0.00 CPU 0.00 Clk (an422-menk-b)
+INFO: utt.c(375): HMMHist[0..0](an422-menk-b): 6(4)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     5404 bg(),     5400 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an423-menk-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    90     0    44     -567991   -74100   -1 <sil>
+   143    45    65     -264398   -74100   -1 <sil>
+   295    66   100     -530673  -148846    0 D
+  1116   101   148     -912090  -148846    0 H
+  1597   149   181     -354374  -148846    0 EIGHT
+  2420   182   202     -178374  -148846    0 AND
+  3024   203   247     -777692  -148846    0 H
+  3091   248   258     -128250   -74100   -1 <sil>
+  3196   259   280     -278149  -148846    0 NINE
+  3239   281   286      -99749  -148846    0 E
+  4603   287   344     -806460  -148846    0 SIX
+  4851   345   360     -195259   -74100   -1 <sil>
+  4853   361   361           0  -148846    0 </s>
+           0   361    -5093459 -1636014 (Total)
+
+FWDVIT: 'D H EIGHT AND H NINE E SIX ' (an423-menk-b)
+
+FWDXCT: an423-menk-b S 0 T -6729473 A -5093459 L -1636014 0 -567991 -74100 <sil> 45 -264398 -74100 <sil> 66 -530673 -148846 D 101 -912090 -148846 H 149 -354374 -148846 EIGHT 182 -178374 -148846 AND 203 -777692 -148846 H 248 -128250 -74100 <sil> 259 -278149 -148846 NINE 281 -99749 -148846 E 287 -806460 -148846 SIX 345 -195259 -74100 <sil> 361
+
+INFO: utt.c(337):  361 frm;  1490 sen, 10695 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    630 hmm,  13 wd/fr, 0.00 CPU 0.00 Clk (an423-menk-b)
+INFO: utt.c(375): HMMHist[0..0](an423-menk-b): 13(3)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    64174 bg(),    64168 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an424-menk-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    36     0    28     -209567   -74100   -1 <sil>
+   269    29    62     -403626  -148846    0 S
+   284    63    66      -52335   -74100   -1 <sil>
+   402    67   100     -440718  -148846    0 Y
+   958   101   123     -385990  -148846    0 F
+  1415   124   151     -240650  -148846    0 C
+  1897   152   200     -517170  -148846    0 EIGHTEENTH
+  1985   201   217     -147745   -74100   -1 <sil>
+  2110   218   258     -457183  -148846    0 NINE
+  2194   259   297     -275759  -148846    0 SIX
+  2233   298   302     -133197   -74100   -1 <sil>
+  2496   303   315     -187394  -148846    0 OH
+  3196   316   345     -318579  -148846    0 ONE
+  3385   346   400     -687825  -148846    0 SEVENTH
+  3388   401   401           0  -148846    0 </s>
+           0   401    -4457738 -1933706 (Total)
+
+FWDVIT: 'S Y F C EIGHTEENTH NINE SIX OH ONE SEVENTH ' (an424-menk-b)
+
+FWDXCT: an424-menk-b S 0 T -6391444 A -4457738 L -1933706 0 -209567 -74100 <sil> 29 -403626 -148846 S 63 -52335 -74100 <sil> 67 -440718 -148846 Y 101 -385990 -148846 F 124 -240650 -148846 C 152 -517170 -148846 EIGHTEENTH 201 -147745 -74100 <sil> 218 -457183 -148846 NINE 259 -275759 -148846 SIX 298 -133197 -74100 <sil> 303 -187394 -148846 OH 316 -318579 -148846 ONE 346 -687825 -148846 SEVENTH 401
+
+INFO: utt.c(337):  401 frm;  1271 sen,  9069 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    494 hmm,   8 wd/fr, 0.00 CPU 0.00 Clk (an424-menk-b)
+INFO: utt.c(375): HMMHist[0..0](an424-menk-b): 16(3)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    36425 bg(),    36422 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an425-menk-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    58     0    37     -401876   -74100   -1 <sil>
+   219    38    91     -690297  -148846    0 ENTER(2)
+   262    92    96      -77201   -74100   -1 <sil>
+   870    97   123     -533615  -148846    0 ONE
+  1414   124   167     -354087  -148846    0 SEVENTY
+  1636   168   225     -524447  -148846    0 SIX
+  1676   226   240     -139950   -74100   -1 <sil>
+  1678   241   241           0  -148846    0 </s>
+           0   241    -2721473  -966530 (Total)
+
+FWDVIT: 'ENTER ONE SEVENTY SIX ' (an425-menk-b)
+
+FWDXCT: an425-menk-b S 0 T -3688003 A -2721473 L -966530 0 -401876 -74100 <sil> 38 -690297 -148846 ENTER(2) 92 -77201 -74100 <sil> 97 -533615 -148846 ONE 124 -354087 -148846 SEVENTY 168 -524447 -148846 SIX 226 -139950 -74100 <sil> 241
+
+INFO: utt.c(337):  241 frm;  1238 sen,  8715 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    510 hmm,   7 wd/fr, 0.00 CPU 0.00 Clk (an425-menk-b)
+INFO: utt.c(375): HMMHist[0..0](an425-menk-b): 6(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    16234 bg(),    16230 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an426-fvap-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+   103     0    19     -350524   -74100   -1 <sil>
+   149    20    34     -173770   -74100   -1 <sil>
+   219    35    52     -127785  -148846    0 AND
+   368    53    76     -359227  -148846    0 TEN
+   578    77   101     -194924  -148846    0 NINE
+   759   102   124     -195944  -148846    0 TWO
+   826   125   130     -207751   -74100   -1 <sil>
+  1799   131   169     -493629  -148846    0 EIGHT
+  2145   170   190     -259328   -74100   -1 <sil>
+  2152   191   191           0  -148846    0 </s>
+           0   191    -2362882 -1189476 (Total)
+
+FWDVIT: 'AND TEN NINE TWO EIGHT ' (an426-fvap-b)
+
+FWDXCT: an426-fvap-b S 0 T -3552358 A -2362882 L -1189476 0 -350524 -74100 <sil> 20 -173770 -74100 <sil> 35 -127785 -148846 AND 53 -359227 -148846 TEN 77 -194924 -148846 NINE 102 -195944 -148846 TWO 125 -207751 -74100 <sil> 131 -493629 -148846 EIGHT 170 -259328 -74100 <sil> 191
+
+INFO: utt.c(337):  191 frm;  1607 sen, 11585 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    732 hmm,  11 wd/fr, 0.00 CPU 0.00 Clk (an426-fvap-b)
+INFO: utt.c(375): HMMHist[0..0](an426-fvap-b): 6(3)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    15600 bg(),    15596 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an427-fvap-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    72     0    31     -466209   -74100   -1 <sil>
+   473    32    85     -876595  -148846    0 ERASE(2)
+   511    86    90     -168943   -74100   -1 <sil>
+   753    91   111     -233225  -148846    0 E
+   877   112   140     -427461  -148846    0 D
+  1154   141   176     -491183  -148846    0 Z
+  1183   177   179      -63264   -74100   -1 <sil>
+  1496   180   214     -413631  -148846    0 E
+  1639   215   243     -227646  -148846    0 FIFTY
+  1895   244   297     -566384  -148846    0 SIX
+  1987   298   320     -169900   -74100   -1 <sil>
+  1989   321   321           0  -148846    0 </s>
+           0   321    -4104441 -1487168 (Total)
+
+FWDVIT: 'ERASE E D Z E FIFTY SIX ' (an427-fvap-b)
+
+FWDXCT: an427-fvap-b S 0 T -5591609 A -4104441 L -1487168 0 -466209 -74100 <sil> 32 -876595 -148846 ERASE(2) 86 -168943 -74100 <sil> 91 -233225 -148846 E 112 -427461 -148846 D 141 -491183 -148846 Z 177 -63264 -74100 <sil> 180 -413631 -148846 E 215 -227646 -148846 FIFTY 244 -566384 -148846 SIX 298 -169900 -74100 <sil> 321
+
+INFO: utt.c(337):  321 frm;  1250 sen,  8990 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    454 hmm,   6 wd/fr, 0.00 CPU 0.00 Clk (an427-fvap-b)
+INFO: utt.c(375): HMMHist[0..0](an427-fvap-b): 11(3)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    13948 bg(),    13945 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an428-fvap-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    36     0    28     -295138   -74100   -1 <sil>
+   486    29    77     -982634  -148846    0 ENTER
+   732    78    87     -141400   -74100   -1 <sil>
+  1030    88   104     -191075  -148846    0 EIGHT
+  1356   105   130     -430249  -148846    0 THIRD
+  2002   131   180     -802189  -148846    0 EIGHTEENTH
+  2007   181   181           0  -148846    0 </s>
+           0   181    -2842685  -892430 (Total)
+
+FWDVIT: 'ENTER EIGHT THIRD EIGHTEENTH ' (an428-fvap-b)
+
+FWDXCT: an428-fvap-b S 0 T -3735115 A -2842685 L -892430 0 -295138 -74100 <sil> 29 -982634 -148846 ENTER 78 -141400 -74100 <sil> 88 -191075 -148846 EIGHT 105 -430249 -148846 THIRD 131 -802189 -148846 EIGHTEENTH 181
+
+INFO: utt.c(337):  181 frm;  1709 sen, 11769 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    811 hmm,  11 wd/fr, 0.00 CPU 0.00 Clk (an428-fvap-b)
+INFO: utt.c(375): HMMHist[0..0](an428-fvap-b): 8(4)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    21454 bg(),    21451 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an429-fvap-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+   148     0    35     -495541   -74100   -1 <sil>
+   432    36    95     -886882  -148846    0 RUBOUT
+   608    96   112     -224040  -148846    0 E
+  1019   113   140     -397471  -148846    0 Y
+  1555   141   172     -524140  -148846    0 HALF
+  1766   173   187     -202983   -74100   -1 <sil>
+  2177   188   228     -528137  -148846    0 C
+  2242   229   243     -198678   -74100   -1 <sil>
+  2442   244   289     -505612  -148846    0 X
+  2498   290   319     -341955   -74100   -1 <sil>
+ serial8250: too much work for irq4
+ 2590   320   355     -400928  -148846    0 FOUR
+  2663   356   370     -172582   -74100   -1 <sil>
+  2666   371   371           0  -148846    0 </s>
+           0   371    -4878949 -1561268 (Total)
+
+FWDVIT: 'RUBOUT E Y HALF C X FOUR ' (an429-fvap-b)
+
+FWDXCT: an429-fvap-b S 0 T -6440217 A -4878949 L -1561268 0 -495541 -74100 <sil> 36 -886882 -148846 RUBOUT 96 -224040 -148846 E 113 -397471 -148846 Y 141 -524140 -148846 HALF 173 -202983 -74100 <sil> 188 -528137 -148846 C 229 -198678 -74100 <sil> 244 -5056serial8250: too much work for irq4
+12 -148846 X 290 -341955 -74100 <sil> 320 -400928 -148846 FOUR 356 -172582 -74100 <sil> 371
+
+INFO: utt.c(337):  371 frm;  1514 sen, 11098 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    631 hmm,   7 wd/fr, 0.00 CPU 0.00 Clk (an429-fvap-b)
+INFO: utt.c(375): HMMHist[0..0](an429-fvap-b): 11(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    24011 bg(),    24007 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an430-fvap-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    60     0    26     -366140   -74100   -1 <sil>
+   144    27    45     -208222  -148846    0 R
+   607    46    85     -567591  -148846    0 H
+   668    86    91     -156022   -74100   -1 <sil>
+  1042    92   114     -265346  -148846    0 N
+  1586   115   143     -300013  -148846    0 G
+  1907   144   173     -277613  -148846    0 EIGHT
+  2265   174   208     -326378  -148846    0 FIFTY
+  2456   209   230     -171136  -148846    0 FOUR
+  2579   231   251     -267662  -148846    0 EIGHTY
+  2929   252   291     -673742  -148846    0 THREE
+  3049   292   310     -202898   -74100   -1 <sil>
+  3051   311   311           0  -148846    0 </s>
+           0   311    -3782763 -1710760 (Total)
+
+FWDVIT: 'R H N G EIGHT FIFTY FOUR EIGHTY THREE ' (an430-fvap-b)
+
+FWDXCT: an430-fvap-b S 0 T -5493523 A -3782763 L -1710760 0 -366140 -74100 <sil> 27 -208222 -148846 R 46 -567591 -148846 H 86 -156022 -74100 <sil> 92 -265346 -148846 N 115 -300013 -148846 G 144 -277613 -148846 EIGHT 174 -326378 -148846 FIFTY 209 -171136 -148846 FOUR 231 -267662 -148846 EIGHTY 252 -673742 -148846 THREE 292 -202898 -74100 <sil> 311
+
+INFO: utt.c(337):  311 frm;  1663 sen, 12185 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    766 hmm,  10 wd/fr, 0.00 CPU 0.00 Clk (an430-fvap-b)
+INFO: utt.c(375): HMMHist[0..0](an430-fvap-b): 13(4)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    34251 bg(),    34248 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an431-marh-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    59     0    33     -379298   -74100   -1 <sil>
+   285    34    81     -656029  -148846    0 RUBOUT
+   303    82    95     -107862   -74100   -1 <sil>
+   375    96   114     -198566  -148846    0 N
+   767   115   138     -353472  -148846    0 S
+   998   139   159     -281817  -148846    0 B
+  1352   160   185     -301575  -148846    0 H
+  1538   186   220     -581307  -148846    0 T
+  1652   221   267     -185870   -74100   -1 <sil>
+  1712   268   300     -254326  -148846    0 SIX
+  1879   301   337     -486469  -148846    0 FOURTEEN
+  2262   338   358     -391263  -148846    0 R
+  2666   359   370     -231180   -74100   -1 <sil>
+  2673   371   371           0  -148846    0 </s>
+           0   371    -4409034 -1784860 (Total)
+
+FWDVIT: 'RUBOUT N S B H T SIX FOURTEEN R ' (an431-marh-b)
+
+FWDXCT: an431-marh-b S 0 T -6193894 A -4409034 L -1784860 0 -379298 -74100 <sil> 34 -656029 -148846 RUBOUT 82 -107862 -74100 <sil> 96 -198566 -148846 N 115 -353472 -148846 S 139 -281817 -148846 B 160 -301575 -148846 H 186 -581307 -148846 T 221 -185870 -74100 <sil> 268 -254326 -148846 SIX 301 -486469 -148846 FOURTEEN 338 -391263 -148846 R 359 -231180 -74100 <sil> 371
+
+INFO: utt.c(337):  371 frm;  1310 sen,  9034 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    517 hmm,   7 wd/fr, 0.00 CPU 0.00 Clk (an431-marh-b)
+INFO: utt.c(375): HMMHist[0..0](an431-marh-b): 11(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    20158 bg(),    20154 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an432-marh-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    39     0    35     -192650   -74100   -1 <sil>
+   119    36    61     -114825  -148846    0 X
+   337    62    94     -433083  -148846    0 AND
+   491    95   118     -354223  -148846    0 K
+   557   119   127     -165158  -148846    0 E
+   762   128   150     -196278  -148846    0 U
+   847   151   156     -108862  -148846    0 A
+   893   157   159      -66365   -74100   -1 <sil>
+  1599   160   195     -490602  -148846    0 EIGHT
+  1874   196   210     -175275   -74100   -1 <sil>
+  1880   211   211           0  -148846    0 </s>
+           0   211    -2297321 -1413068 (Total)
+
+FWDVIT: 'X AND K E U A EIGHT ' (an432-marh-b)
+
+FWDXCT: an432-marh-b S 0 T -3710389 A -2297321 L -1413068 0 -192650 -74100 <sil> 36 -114825 -148846 X 62 -433083 -148846 AND 95 -354223 -148846 K 119 -165158 -148846 E 128 -196278 -148846 U 151 -108862 -148846 A 157 -66365 -74100 <sil> 160 -490602 -148846 EIGHT 196 -175275 -74100 <sil> 211
+
+INFO: utt.c(337):  211 frm;  1392 sen,  9661 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    522 hmm,   9 wd/fr, 0.00 CPU 0.00 Clk (an432-marh-b)
+INFO: utt.c(375): HMMHist[0..0](an432-marh-b): 13(6)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):    12250 bg(),    12247 bo;     0 fills,        1 in mem (50.0%)
+
+Backtrace(an433-marh-b)
+ LatID  SFrm  EFrm        AScr     LScr Type
+    39     0    37     -185101   -74100   -1 <sil>
+   151    38    83     -583342  -148846    0 ENTER(2)
+   208    84   109     -163547   -74100   -1 <sil>
+   293   110   144     -474894  -148846    0 FOUR
+   498   145   181     -359714  -148846    0 FIVE
+   579   182   191     -266293   -74100   -1 <sil>
+   797   192   210     -160426  -148846    0 EIGHT
+   872   211   217      -62645   -74100   -1 <sil>
+  1225   218   243     -348843  -148846    0 Q
+  1569   244   281     -430571  -148846    0 ONE
+  1651   282   290     -164822   -74100   -1 <sil>
+  1657   291   291           0  -148846    0 </s>
+           0   291    -3200198 -1412422 (Total)
+
+FWDVIT: 'ENTER FOUR FIVE EIGHT Q ONE ' (an433-marh-b)
+
+FWDXCT: an433-marh-b S 0 T -4612620 A -3200198 L -1412422 0 -185101 -74100 <sil> 38 -583342 -148846 ENTER(2) 84 -163547 -74100 <sil> 110 -474894 -148846 FOUR 145 -359714 -148846 FIVE 182 -266293 -74100 <sil> 192 -160426 -148846 EIGHT 211 -62645 -74100 <sil> 218 -348843 -1serial8250: too much work for irq4
+48846 Q 244 -430571 -148846 ONE 282 -164822 -74100 <sil> 291
+
+INFO: utt.c(337):  291 frm;  1206 sen,  8381 gau/fr, Sen 0.00 CPU 0.00 Clk [Ovrhd 0.00 CPU 0.00 Clk];    415 hmm,   6 wd/fr, 0.00 CPU 0.00 Clk (an433-marh-b)
+INFO: utt.c(375): HMMHist[0..0](an433-marh-b): 6(2)
+INFO: lm.c(823):         0 tg(),         0 tgcache,        0 bo;     0 fills,        0 in mem (0.0%)
+INFO: lm.c(826):     9730 bg(),     9727 bo;     0 fills,        1 in mem (50.0%)

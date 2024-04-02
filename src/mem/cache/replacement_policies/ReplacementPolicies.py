@@ -219,3 +219,22 @@ class RPC(BaseReplacementPolicy):
     num_cpus = Param.Int(1, "Number of cores")
     num_clock_bits = Param.Int(3, "Number of bits for aging clock")
     num_internal_sampled_sets = Param.Int(4, "Number of sets for sub-sampled cache")
+
+class EE(BaseReplacementPolicy):
+    type = "EE"
+    cxx_class = "gem5::replacement_policy::EE"
+    cxx_header = "mem/cache/replacement_policies/ee.hh"
+
+    num_etr_bits = Param.Int(5, "Number of bits per ETR")
+    num_cache_sets = Param.Int(16384, "Number of target cache sets")
+    cache_block_size = Param.Int(64, "Number of target cache block size")
+    num_cache_ways = Param.Int(16, "Number of target cache ways")
+    num_pred_entries = Param.Int(1 << 11, "Number of predictor entries")
+    num_pred_bits = Param.Int(
+        7, "Number of counter bits per entry in predictor"
+    )
+    num_sampled_sets = Param.Int(512, "Number of sets in sampled cache")
+    timer_size = Param.Int(8, "Number of bits for timestamp")
+    num_cpus = Param.Int(1, "Number of cores")
+    num_clock_bits = Param.Int(3, "Number of bits for aging clock")
+    num_internal_sampled_sets = Param.Int(4, "Number of sets for sub-sampled cache")

@@ -8,7 +8,7 @@ from typing import Dict, Any
 
 from m5.objects import (
     StridePrefetcher, SignaturePathPrefetcher, CS395TPrefetcher, # Prefetchers
-    LRURP, TreePLRURP, CS395TRP, RARE, RPC, # Replacement policies
+    LRURP, TreePLRURP, CS395TRP, RARE, RPC, EE,  # Replacement policies
     NULL
 )
 import util.simarglib as simarglib
@@ -35,7 +35,7 @@ parser.add_argument("--l2_repl", type=str, choices=["lru", "plru", "cs395t"], he
 parser.add_argument("--llc_size", type=str, help="LLC size")
 parser.add_argument("--llc_assoc", type=int, help="LLC associativity")
 parser.add_argument("--llc_pref", type=str, choices=["stride", "spp", "cs395t", "no"], help="LLC prefetcher")
-parser.add_argument("--llc_repl", type=str, choices=["lru", "plru", "cs395t", "rare", "rpc"], help="LLC replacement policy")
+parser.add_argument("--llc_repl", type=str, choices=["lru", "plru", "cs395t", "rare", "rpc", "ee"], help="LLC replacement policy")
 ###
 
 def get_l1d_params() -> Dict[str, Any]:
@@ -211,6 +211,9 @@ def get_llc_params() -> Dict[str, Any]:
         params["replacement_params"] = {}
     elif (simarglib.get("llc_repl") == "rpc"):
         params["ReplacementPolicyCls"] = RPC
+        params["replacement_params"] = {}
+    elif (simarglib.get("llc_repl") == "ee"):
+        params["ReplacementPolicyCls"] = EE
         params["replacement_params"] = {}
     
     return params
