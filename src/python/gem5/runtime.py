@@ -78,6 +78,7 @@ def get_runtime_coherence_protocol() -> CoherenceProtocol:
         "mesi_three_level": CoherenceProtocol.MESI_THREE_LEVEL,
         "gpu_viper": CoherenceProtocol.GPU_VIPER,
         "chi": CoherenceProtocol.CHI,
+        "msi": CoherenceProtocol.MSI,
     }
 
     protocol_str = str(buildEnv["PROTOCOL"]).lower()
