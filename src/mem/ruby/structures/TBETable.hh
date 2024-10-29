@@ -45,6 +45,8 @@
 #include <unordered_map>
 
 #include "mem/ruby/common/Address.hh"
+#include "src/mem/packet.hh"
+#include "src/mem/cache/replacement_policies/base.hh"
 
 namespace gem5
 {
@@ -63,6 +65,7 @@ class TBETable
 
     bool isPresent(Addr address) const;
     void allocate(Addr address);
+    void allocateWithPacket(Addr address, PacketPtr pkt, const ReplacementCandidates& candidates);
     void deallocate(Addr address);
     bool
     areNSlotsAvailable(int n, Tick current_time) const
@@ -113,6 +116,15 @@ TBETable<ENTRY>::allocate(Addr address)
     assert(!isPresent(address));
     assert(m_map.size() < m_number_of_TBEs);
     m_map[address] = ENTRY();
+}
+
+template<class ENTRY>
+inline void
+TBETable<ENTRY>::allocateWithPacket(Addr address, PacketPtr pkt, const ReplacementCandidates& candidates)
+{
+    assert(!isPresent(address));
+    assert(m_map.size() < m_number_of_TBEs);
+    m_map[address] = ENTRY(pkt, candidates);
 }
 
 template<class ENTRY>

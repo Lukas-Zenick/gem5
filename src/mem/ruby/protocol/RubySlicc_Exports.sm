@@ -46,6 +46,7 @@ external_type(std::string, primitive="yes");
 external_type(uint32_t, primitive="yes");
 external_type(uint64_t, primitive="yes");
 external_type(PacketPtr, primitive="yes");
+external_type(ReplacementCandidates, primitive="yes");
 external_type(Packet, primitive="yes");
 external_type(Addr, primitive="yes");
 external_type(Cycles, primitive="yes", default="Cycles(0)");

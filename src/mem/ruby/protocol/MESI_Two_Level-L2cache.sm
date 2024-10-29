@@ -153,7 +153,10 @@ machine(MachineType:L2Cache, "MESI Directory L2 Cache CMP")
 
   structure(TBETable, external="yes") {
     TBE lookup(Addr);
+    // old allocate
     void allocate(Addr);
+    // new allocate
+    void allocateWithPacket(Addr address, PacketPtr pkt, ReplacementCandidates candidates);
     void deallocate(Addr);
     bool isPresent(Addr);
   }
@@ -606,10 +609,24 @@ machine(MachineType:L2Cache, "MESI Directory L2 Cache CMP")
   }
 
   // OTHER ACTIONS
+  //old allocate
+  // action(i_allocateTBE, "i", desc="Allocate TBE for request") {
+  //   check_allocate(TBEs);
+  //   assert(is_valid(cache_entry));
+  //   TBEs.allocate(address);
+  //   set_tbe(TBEs[address]);
+  //   tbe.L1_GetS_IDs.clear();
+  //   tbe.DataBlk := cache_entry.DataBlk;
+  //   tbe.Dirty := cache_entry.Dirty;
+  //   tbe.pendingAcks := cache_entry.Sharers.count();  
+  // }
+
+  //new allocate
   action(i_allocateTBE, "i", desc="Allocate TBE for request") {
     check_allocate(TBEs);
     assert(is_valid(cache_entry));
-    TBEs.allocate(address);
+    // ReplacementCandidates candidates := L2cache.getReplacementCandidates(address);
+    TBEs.allocateWithPacket(address, pkt, candidates);
     set_tbe(TBEs[address]);
     tbe.L1_GetS_IDs.clear();
     tbe.DataBlk := cache_entry.DataBlk;
@@ -690,12 +707,22 @@ machine(MachineType:L2Cache, "MESI Directory L2 Cache CMP")
   }
 
   action(set_setMRU, "\set", desc="set the MRU entry") {
-    L2cache.setMRU(address);
+    peek(L1RequestL2Network_in, RequestMsg) {
+      L2cache.setMRU(address, in_msg, candidates);
+    }
   }
+  
+  //old allocate
+  // action(qq_allocateL2CacheBlock, "\q", desc="Set L2 cache tag equal to tag of block B.") {
+  //   if (is_invalid(cache_entry)) {
+  //     set_cache_entry(L2cache.allocate(address, new Entry));
+  //   }
+  // }
 
+  //new allocate
   action(qq_allocateL2CacheBlock, "\q", desc="Set L2 cache tag equal to tag of block B.") {
     if (is_invalid(cache_entry)) {
-      set_cache_entry(L2cache.allocate(address, new Entry));
+      set_cache_entry(L2cache.allocate(address, new Entry, new Packet, candidates));
     }
   }
 

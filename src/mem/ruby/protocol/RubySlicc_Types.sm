@@ -183,6 +183,7 @@ structure(RubyRequest, desc="...", interface="Message", external="yes") {
   int wfid,                  desc="Writethrough wavefront";
   uint64_t instSeqNum,       desc="Instruction sequence number";
   PacketPtr pkt,             desc="Packet associated with this request";
+  ReplacementCandidates candidates, desc="Replacement candidates for this request";
   bool htmFromTransaction,   desc="Memory request originates within a HTM transaction";
   int htmTransactionUid,     desc="Used to identify the unique HTM transaction that produced this request";
   bool isTlbi,               desc="Memory request is a TLB shootdown (invalidation) operation";

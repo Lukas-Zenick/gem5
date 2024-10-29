@@ -77,10 +77,16 @@ class CacheMemory : public SimObject
 
     void init();
 
+    ReplacementCandidates getPossibleEntries(Addr address);
+
     // Public Methods
     // perform a cache access and see if we hit or not.  Return true on a hit.
     bool tryCacheAccess(Addr address, RubyRequestType type,
                         DataBlock*& data_ptr);
+
+    bool tryCacheAccess(Addr address, RubyRequestType type,
+                        DataBlock*& data_ptr, PacketPtr pkt);
+
 
     // similar to above, but doesn't require full access check
     bool testCacheAccess(Addr address, RubyRequestType type,
@@ -103,6 +109,10 @@ class CacheMemory : public SimObject
 
     // find an unused entry and sets the tag appropriate for the address
     AbstractCacheEntry* allocate(Addr address, AbstractCacheEntry* new_entry);
+
+    AbstractCacheEntry* allocate(Addr address, AbstractCacheEntry* new_entry, PacketPtr pkt,
+                                  const ReplacementCandidates& candidates);
+
     void allocateVoid(Addr address, AbstractCacheEntry* new_entry)
     {
         allocate(address, new_entry);
@@ -131,6 +141,8 @@ class CacheMemory : public SimObject
     void setMRU(Addr address);
     void setMRU(Addr addr, int occupancy);
     void setMRU(AbstractCacheEntry* entry);
+    void setMRU(Addr address, PacketPtr pkt,
+                  const ReplacementCandidates& candidates);
     int getReplacementWeight(int64_t set, int64_t loc);
 
     // Functions for locking and unlocking cache lines corresponding to the
