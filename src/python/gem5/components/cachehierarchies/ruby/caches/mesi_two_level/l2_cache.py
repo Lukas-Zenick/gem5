@@ -37,7 +37,13 @@ from ..abstract_l2_cache import AbstractL2Cache
 
 class L2Cache(AbstractL2Cache):
     def __init__(
-        self, l2_size, l2_assoc, network, num_l2Caches, cache_line_size
+        self,
+        l2_size,
+        l2_assoc,
+        network,
+        num_l2Caches,
+        cache_line_size,
+        replacement_policy=None,
     ):
         super().__init__(network, cache_line_size)
 
@@ -46,6 +52,7 @@ class L2Cache(AbstractL2Cache):
             size=l2_size,
             assoc=l2_assoc,
             start_index_bit=self.getIndexBit(num_l2Caches),
+            replacement_policy=replacement_policy,  # if replacement_policy else TreePLRURP(),
         )
 
         self.transitions_per_cycle = 4

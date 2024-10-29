@@ -65,6 +65,7 @@ class MESITwoLevelCacheHierarchy(
         l2_size: str,
         l2_assoc: str,
         num_l2_banks: int,
+        l2_replacement_policy=None,
     ):
         AbstractRubyCacheHierarchy.__init__(self=self)
         AbstractTwoLevelCacheHierarchy.__init__(
@@ -78,6 +79,7 @@ class MESITwoLevelCacheHierarchy(
         )
 
         self._num_l2_banks = num_l2_banks
+        self._l2_replacement_policy = l2_replacement_policy
 
     def incorporate_cache(self, board: AbstractBoard) -> None:
         requires(coherence_protocol_required=CoherenceProtocol.MESI_TWO_LEVEL)
@@ -140,6 +142,7 @@ class MESITwoLevelCacheHierarchy(
                 self.ruby_system.network,
                 self._num_l2_banks,
                 cache_line_size,
+                replacement_policy=self._l2_replacement_policy,
             )
             for _ in range(self._num_l2_banks)
         ]
