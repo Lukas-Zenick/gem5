@@ -103,9 +103,16 @@ class CacheMemory : public SimObject
 
     // find an unused entry and sets the tag appropriate for the address
     AbstractCacheEntry* allocate(Addr address, AbstractCacheEntry* new_entry);
+    AbstractCacheEntry *allocateWithPkt(Addr addr, AbstractCacheEntry *entry, PacketPtr pkt);
+
     void allocateVoid(Addr address, AbstractCacheEntry* new_entry)
     {
         allocate(address, new_entry);
+    }
+
+    void allocateVoidWithPkt(Addr addr, AbstractCacheEntry *entry, PacketPtr pkt)
+    {
+        allocateWithPkt(addr, entry, pkt);
     }
 
     // Explicitly free up this address
@@ -129,8 +136,10 @@ class CacheMemory : public SimObject
 
     // Set this address to most recently used
     void setMRU(Addr address);
+    void setMRUWithPkt(Addr addr, PacketPtr pkt);
     void setMRU(Addr addr, int occupancy);
     void setMRU(AbstractCacheEntry* entry);
+    void setMRUWithPkt(AbstractCacheEntry *entry, PacketPtr pkt);
     int getReplacementWeight(int64_t set, int64_t loc);
 
     // Functions for locking and unlocking cache lines corresponding to the

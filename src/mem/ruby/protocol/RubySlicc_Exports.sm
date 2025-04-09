@@ -337,6 +337,7 @@ structure(SequencerMsg, desc="...", interface="Message") {
   int Len,                   desc="size in bytes of access";
   PrefetchBit Prefetch,      desc="Is this a prefetch request";
   MessageSizeType MessageSize, default="MessageSizeType_Request_Control";
+  PacketPtr m_pkt,             desc="Packet associated with this message";
 
   bool functionalRead(Packet *pkt) {
     return false;

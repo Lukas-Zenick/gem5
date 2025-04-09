@@ -1,0 +1,11 @@
+===== gem5 Basic Stats =====
+simInsts:            7035098723
+simTicks:            7659999999
+simFreq:             1000000000000
+Calculated CPU cycles (assuming 3 GHz): 22980000
+IPC (system-wide):   306.1401
+
+----- Summed L1-D Demand Accesses (4 controllers) -----
+L1-D total hits:     11501502
+L1-D total misses:   0
+L1-D miss rate:      0.0000

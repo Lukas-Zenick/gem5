@@ -1,0 +1,64 @@
+Global frequency set at 1000000000000 ticks per second
+      0: board.pc.south_bridge.cmos.rtc: Real-time clock set to Sun Jan  1 00:00:00 2012
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.0.0.1
+gem5 compiled Feb 26 2025 13:15:18
+gem5 started Feb 26 2025 14:29:49
+gem5 executing on pedagogical-1, pid 1724693
+command line: /scratch/cluster/lukas/gem5-research/build/X86_MESI_Two_Level/gem5.debug --outdir=./jakeNew/outdir/LRU/swaptions_default_4_cores ./gem5-configs-395t/run_fs_mesi_two_level.py --benchmark swaptions --l2_replacement_policy LRU --size medium --cores 4 --max_rois 1 --sample 1000000 50 1000
+
+Using L2 replacement policy: LRURP
+info: Using default config
+***Beginning simulation!
+Num entries: 0
+***Beginning benchmark execution
+secret: 1
+Num entries: 1
+***Switching to timing processor. Fast forward took 2.089902639389038 seconds
+switching cpus
+secret: 2
+===Entering stats ROI #1. Warmup took 12715.681401729584 seconds
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+Recording stats (ROI not yet complete)
+scheduling 50000000 insts
+===Exiting stats ROI #1. Took 37802.79734539986 seconds
+***Switching to fast-forward processor
+switching cpus

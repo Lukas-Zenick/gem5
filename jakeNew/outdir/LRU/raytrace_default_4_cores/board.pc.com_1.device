@@ -1,0 +1,825 @@
+Linux version 4.19.83 (aakahlow@amarillo) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #1 SMP Thu Nov 28 16:06:01 PST 2019
+Command line: earlyprintk=ttyS0 console=ttyS0 lpj=7999923 root=/dev/hda1 disk_device=/dev/hda
+CPU: vendor_id 'HygonGenuine' unknown, using generic init.
+CPU: Your system may be unstable.
+x86/fpu: x87 FPU will use FXSAVE
+BIOS-provided physical RAM map:
+BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+BIOS-e820: [mem 0x000000000009fc00-0x00000000000fffff] reserved
+BIOS-e820: [mem 0x0000000000100000-0x00000000bfffffff] usable
+BIOS-e820: [mem 0x00000000ffff0000-0x00000000ffffffff] reserved
+bootconsole [earlyser0] enabled
+NX (Execute Disable) protection: active
+SMBIOS 2.5 present.
+DMI:  , BIOS  06/08/2008
+tsc: Fast TSC calibration failed
+AGP: No AGP bridge found
+last_pfn = 0xc0000 max_arch_pfn = 0x400000000
+Disabled
+x86/PAT: MTRRs disabled, skipping PAT initialization too.
+CPU MTRRs all blank - virtualized system.
+x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC
+found SMP MP-table at [mem 0x000f0050-0x000f005f]
+ACPI: Early table checksum verification disabled
+ACPI: RSDP 0x00000000000F01F0 000024 (v02       )
+ACPI: XSDT 0x00000000000F0238 000024 (v01                 00000000      00000000)
+ACPI BIOS Error (bug): Invalid table length 0x24 in RSDT/XSDT (20180810/tbutils-291)
+Zone ranges:
+  DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+  DMA32    [mem 0x0000000001000000-0x00000000bfffffff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000001000-0x000000000009efff]
+  node   0: [mem 0x0000000000100000-0x00000000bfffffff]
+Reserved but unavailable: 98 pages
+Initmem setup node 0 [mem 0x0000000000001000-0x00000000bfffffff]
+Intel MultiProcessor Specification v1.4
+MPTABLE: OEM ID:
+MPTABLE: Product ID:
+MPTABLE: APIC at: 0xFEE00000
+Processor #0 (Bootup-CPU)
+Processor #1
+Processor #2
+Processor #3
+IOAPIC[0]: apic_id 4, version 20, address 0xfec00000, GSI 0-23
+Processors: 4
+smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[mem 0xc0000000-0xfffeffff] available for PCI devices
+Booting paravirtualized kernel on bare hardware
+clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+random: get_random_bytes called from start_kernel+0x8f/0x583 with crng_init=0
+setup_percpu: NR_CPUS:8192 nr_cpumask_bits:4 nr_cpu_ids:4 nr_node_ids:1
+percpu: Embedded 41 pages/cpu s127960 r8192 d31784 u524288
+Built 1 zonelists, mobility grouping on.  Total pages: 775561
+Kernel command line: earlyprintk=ttyS0 console=ttyS0 lpj=7999923 root=/dev/hda1 disk_device=/dev/hda
+Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+AGP: Checking aperture...
+AGP: No AGP bridge found
+Memory: 3071788K/3145336K available (8204K kernel code, 1570K rwdata, 1940K rodata, 1204K init, 1636K bss, 73548K reserved, 0K cma-reserved)
+Kernel/User page tables isolation: enabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=4.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 524544, nr_irqs: 456, preallocated irqs: 16
+Console: colour dummy device 80x25
+console [ttyS0] enabled
+console [ttyS0] enabled
+bootconsole [earlyser0] disabled
+bootconsole [earlyser0] disabled
+APIC: Switch to symmetric I/O mode setup
+ExtINT not setup in hardware but reported by MP table
+..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+tsc: Unable to calibrate against PIT
+tsc: No reference (HPET/PMTIMER) available
+tsc: Marking TSC unstable due to could not calculate TSC khz
+Calibrating delay loop (skipped) preset value.. 15999.84 BogoMIPS (lpj=7999923)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+mce: unknown CPU type - not enabling MCE support
+Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Spectre V2 : Mitigation: Full generic retpoline
+Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Speculative Store Bypass: Vulnerable
+MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+Freeing SMP alternatives memory: 24K
+smpboot: CPU0: HygonGenuine Fake gem5 x86_64 CPU (family: 0xf, model: 0x25, stepping: 0x1)
+Performance Events: no PMU driver, software events only.
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+x86: Booting SMP configuration:
+.... node  #0, CPUs:      #1
+[Firmware Bug]: CPU1: APIC id mismatch. Firmware: 1 APIC: 0
+ #2
+[Firmware Bug]: CPU2: APIC id mismatch. Firmware: 2 APIC: 0
+ #3
+[Firmware Bug]: CPU3: APIC id mismatch. Firmware: 3 APIC: 0
+smp: Brought up 1 node, 4 CPUs
+smpboot: Max logical packages: 4
+smpboot: Total of 4 processors activated (63999.38 BogoMIPS)
+devtmpfs: initialized
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes)
+NET: Registered protocol family 16
+audit: initializing netlink subsys (disabled)
+audit: type=2000 audit(1325376000.362:1): state=initialized audit_enabled=0 res=1
+cpuidle: using governor ladder
+PCI: Using configuration type 1 for base access
+HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+ACPI: Interpreter disabled.
+vgaarb: loaded
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+PCI: Probing PCI hardware
+PCI host bridge to bus 0000:00
+pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+pci_bus 0000:00: root bus resource [mem 0x00000000-0xffffffffffff]
+pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x14: [io  0x03f6]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+pci 0000:00:04.0: legacy IDE quirk: reg 0x1c: [io  0x0376]
+clocksource: Switched to clocksource refined-jiffies
+VFS: Disk quotas dquot_6.6.0
+VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+pnp: PnP ACPI: disabled
+pci 0000:00:04.0: BAR 6: assigned [mem 0xc0000000-0xc00007ff pref]
+pci 0000:00:04.0: BAR 4: assigned [io  0x1000-0x100f]
+NET: Registered protocol family 2
+tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes)
+TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 32768 bind 32768)
+UDP hash table entries: 2048 (order: 4, 65536 bytes)
+UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+NET: Registered protocol family 1
+platform rtc_cmos: registered platform RTC device (no PNP device found)
+workingset: timestamp_bits=62 max_order=20 bucket_order=0
+fuse init (API version 7.27)
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+io scheduler mq-deadline registered
+io scheduler kyber registered
+acpiphp_ibm: ibm_acpiphp_init: acpi_walk_namespace failed
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 8250
+Linux agpgart interface v0.103
+brd: module loaded
+loop: module loaded
+Uniform Multi-Platform E-IDE driver
+piix 0000:00:04.0: IDE controller (0x8086:0x7111 rev 0x00)
+pci 0000:00:04.0: enabling device (0000 -> 0001)
+pci 0000:00:04.0: PCI->APIC IRQ transform: INT A -> IRQ 16
+piix 0000:00:04.0: not 100% native mode: will probe irqs later
+    ide0: BM-DMA at 0x1000-0x1007
+    ide1: BM-DMA at 0x1008-0x100f
+hda: M5 IDE Disk, ATA DISK drive
+hda: UDMA/33 mode selected
+ide0 at 0x1f0-0x1f7,0x3f6 on irq 14
+ide1 at 0x170-0x177,0x376 on irq 15
+ide_generic: please use "probe_mask=0x3f" module parameter for probing all legacy ISA IDE ports
+ide-gd driver 1.18
+hda: max request size: 128KiB
+hda: 67108864 sectors (34359 MB), CHS=65535/16/63
+ hda: hda1 hda2 < hda5 >
+ide-cd driver 5.00
+Loading iSCSI transport class v2.0-870.
+e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+e1000: Copyright (c) 1999-2006 Intel Corporation.
+e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+igb: Copyright (c) 2007-2014 Intel Corporation.
+igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+ixgbe: Intel(R) 10 Gigabit PCI Express Network Driver - version 5.1.0-k
+ixgbe: Copyright (c) 1999-2016 Intel Corporation.
+ixgbevf: Intel(R) 10 Gigabit PCI Express Virtual Function Network Driver - version 4.1.0-k
+ixgbevf: Copyright (c) 2009 - 2015 Intel Corporation.
+ixgb: Intel(R) PRO/10GbE Network Driver - version 1.0.135-k2-NAPI
+ixgb: Copyright (c) 1999-2008 Intel Corporation.
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-pci: EHCI PCI platform driver
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-pci: OHCI PCI platform driver
+uhci_hcd: USB Universal Host Controller Interface driver
+i8042: PNP: No PS/2 controller found.
+i8042: Probing ports directly.
+serio: i8042 KBD port at 0x60,0x64 irq 1
+serio: i8042 AUX port at 0x60,0x64 irq 12
+mousedev: PS/2 mouse device common for all mice
+IR NEC protocol handler initialized
+IR RC5(x/sz) protocol handler initialized
+IR RC6 protocol handler initialized
+IR JVC protocol handler initialized
+IR Sony protocol handler initialized
+IR SANYO protocol handler initialized
+IR Sharp protocol handler initialized
+IR MCE Keyboard/mouse protocol handler initialized
+input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+IR XMP protocol handler initialized
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered protocol family 17
+mce: Unable to init MCE device (rc: -5)
+mce: Using 32 MCE banks
+Unstable clock detected, switching default tracing clock to "global"
+If you want to keep using the local clock, then add:
+  "trace_clock=local"
+on the kernel command line
+EXT4-fs (hda1): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext4 filesystem) on device 3:1.
+devtmpfs: mounted
+Freeing unused kernel image memory: 1204K
+Write protecting the kernel read-only data: 12288k
+Freeing unused kernel image memory: 2020K
+Freeing unused kernel image memory: 108K
+rodata_test: all tests were successful
+Run /sbin/init as init process
+random: fast init done
+systemd[1]: System time before build time, advancing clock.
+systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+systemd[1]: Detected architecture x86-64.
+
+Welcome to [1mUbuntu 18.04.6 LTS[0m!
+
+systemd[1]: Set hostname to <ubuntu>.
+systemd[1]: File /lib/systemd/system/systemd-journald.service:36 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+systemd[1]: Configuration file /lib/systemd/system/serial-getty@.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Reached target Remote File Systems.
+[[0;32m  OK  [0m] Reached target Remote File Systems.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Created slice User and Session Slice.
+[[0;32m  OK  [0m] Created slice User and Session Slice.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Created slice System Slice.
+[[0;32m  OK  [0m] Created slice System Slice.
+systemd[1]: Listening on Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on Syslog Socket.
+[[0;32m  OK  [0m] Listening on udev Kernel Socket.
+[[0;32m  OK  [0m] Listening on udev Control Socket.
+[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Reached target Slices.
+[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
+[[0;32m  OK  [0m] Listening on Journal Socket.
+         Starting Remount Root andrandom: crng init done
+random: 7 urandom warning(s) missed due to ratelimiting
+ Kernel File Systems...
+         Starting udev Coldplug alEXT4-fs (hda1): re-mounted. Opts: errors=remount-ro
+l Devices...
+[[0;32m  OK  [0m] Started Read required files in advance.
+         Mounting Huge Pages File System...
+         Mounting POSIX Message Queue File System...
+         Starting Load Kernel Modules...
+         Starting Set the console keyboard layout...
+         Starting Create Static Device Nodes in /dev...
+         Mounting Kernel Debug File System...
+[[0;32m  OK  [0m] Listening on Journal Audit Socket.
+         Starting Journal Service...
+         Starting Uncomplicated firewall...
+[[0;32m  OK  [0m] Started Journal Service.
+[[0;32m  OK  [0m] Started Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Mounted Huge Pages File System.
+[[0;32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[0;32m  OK  [0m] Started Load Kernel Modules.
+[[0;32m  OK  [0m] Started Set the console keyboard layout.
+[[0;32m  OK  [0m] Started Create Static Device Nodes in /dev.
+[[0;32m  OK  [0m] Mounted Kernel Debug File System.
+[[0;32m  OK  [0m] Started Uncomplicated firewall.
+[[0;32m  OK  [0m] Started udev Coldplug all Devices.
+         Mounting Kernel Configuration File System...
+         Starting Apply Kernel Variables...
+         Mounting FUSE Control File System...
+         Starting udev Kernel Device Manager...
+[[0;32m  OK  [0m] Reached target Local File Systems (Pre).
+[[0;32m  OK  [0m] Reached target Local File Systems.
+         Starting Set console font and keymap...
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Load/Save Random Seed...
+         Starting Flush Journal to Persistent Storage...
+[[0;32m  OK  [0m] Started udev Kernel Device Manager.
+[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
+[[0;32m  OK  [0m] Started Apply Kernel Variables.
+[[0;32m  OK  [0m] Mounted FUSE Control File System.
+[[0;32m  OK  [0m] Started Set console font and keymap.
+[[0;32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[0;32m  OK  [0m] Started Load/Save Random Seed.
+[[0;32m  OK  [0m] Found device /dev/ttyS0.
+         Starting Network Service...
+[[0;32m  OK  [0m] Started Dispatch Password Requests to Console Directory Watch.
+[[0;32m  OK  [0m] Reached target Paths.
+[[0;32m  OK  [0m] Reached target Local Encrypted Volumes.
+[[0;32m  OK  [0m] Started Network Service.
+[[0;32m  OK  [0m] Started Flush Journal to Persistent Storage.
+         Starting Create Volatile Files and Directories...
+[[0;32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Network Name Resolution...
+         Starting Update UTMP about System Boot/Shutdown...
+         Starting Network Time Synchronization...
+[[0;32m  OK  [0m] Started Network Name Resolution.
+[[0;32m  OK  [0m] Started Network Time Synchronization.
+[[0;32m  OK  [0m] Reached target System Time Synchronized.
+[[0;32m  OK  [0m] Reached target Host and Network Name Lookups.
+[[0;32m  OK  [0m] Reached target Network.
+[[0;32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
+[[0m[0;31m*     [0m] A start job is running for dev-disk…c5a5f79ba5.device (10s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (10s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (11s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (12s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (12s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (13s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (14s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (15s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (15s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (16s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (17s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (18s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (18s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (19s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…c5a5f79ba5.device (20s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (21s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (21s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (22s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (23s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (24s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (24s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (25s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (26s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (26s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (27s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (28s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (29s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (29s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…c5a5f79ba5.device (30s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (31s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (32s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (32s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (33s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (34s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (34s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (35s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (35s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (36s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (36s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (37s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (37s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (38s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…c5a5f79ba5.device (39s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (39s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (40s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (40s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (41s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (41s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (42s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (42s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (43s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (43s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (44s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (44s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (45s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (45s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…c5a5f79ba5.device (46s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (46s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (47s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (48s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (48s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (49s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (49s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (50s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (50s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (51s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (51s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (52s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (52s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (53s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…c5a5f79ba5.device (53s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…c5a5f79ba5.device (54s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…c5a5f79ba5.device (54s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (55s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (55s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (56s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (56s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (57s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (57s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…c5a5f79ba5.device (58s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…c5a5f79ba5.device (58s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…c5a5f79ba5.device (59s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…5a5f79ba5.device (1min / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…5a5f79ba5.device (1min / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…f79ba5.device (1min 1s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…f79ba5.device (1min 1s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…f79ba5.device (1min 2s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…f79ba5.device (1min 2s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…f79ba5.device (1min 3s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…f79ba5.device (1min 3s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…f79ba5.device (1min 4s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…f79ba5.device (1min 4s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…f79ba5.device (1min 5s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…f79ba5.device (1min 5s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…f79ba5.device (1min 6s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…f79ba5.device (1min 6s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…f79ba5.device (1min 7s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…f79ba5.device (1min 8s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…f79ba5.device (1min 8s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…f79ba5.device (1min 9s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…f79ba5.device (1min 9s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…79ba5.device (1min 10s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…79ba5.device (1min 11s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 11s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 12s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 12s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 13s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 13s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…79ba5.device (1min 14s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…79ba5.device (1min 14s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…79ba5.device (1min 15s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…79ba5.device (1min 15s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…79ba5.device (1min 16s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…79ba5.device (1min 16s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…79ba5.device (1min 17s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…79ba5.device (1min 17s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…79ba5.device (1min 18s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 18s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 19s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 19s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 20s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 20s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…79ba5.device (1min 21s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…79ba5.device (1min 21s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…79ba5.device (1min 22s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…79ba5.device (1min 22s / 1min 30s)
+[K[[0m[0;31m*     [0m] A start job is running for dev-disk…79ba5.device (1min 23s / 1min 30s)
+[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for dev-disk…79ba5.device (1min 23s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…79ba5.device (1min 24s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…79ba5.device (1min 24s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…79ba5.device (1min 25s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 25s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 26s / 1min 30s)
+[K[     [0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 26s / 1min 30s)
+[K[    [0;31m*[0;1;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 27s / 1min 30s)
+[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for dev-disk…79ba5.device (1min 27s / 1min 30s)
+[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for dev-disk…79ba5.device (1min 28s / 1min 30s)
+[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for dev-disk…79ba5.device (1min 29s / 1min 30s)
+[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for dev-disk…79ba5.device (1min 29s / 1min 30s)
+[K[[0;1;31m TIME [0m] Timed out waiting for device dev-di…99\x2db583\x2d5fc5a5f79ba5.device.
+[[0;1;33mDEPEND[0m] Dependency failed for /dev/disk/by-…e8bd0-4e65-4199-b583-5fc5a5f79ba5.
+[[0;1;33mDEPEND[0m] Dependency failed for Swap.
+[[0;32m  OK  [0m] Reached target System Initialization.
+[[0;32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
+[[0;32m  OK  [0m] Started Discard unused blocks once a week.
+[[0;32m  OK  [0m] Listening on UUID daemon activation socket.
+[[0;32m  OK  [0m] Started Message of the Day.
+[[0;32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
+[[0;32m  OK  [0m] Reached target Sockets.
+[[0;32m  OK  [0m] Reached target Basic System.
+[[0;32m  OK  [0m] Started Set the CPU Frequency Scaling governor.
+         Starting Login Service...
+         Starting Dispatcher daemon for systemd-networkd...
+         Starting Accounts Service...
+[[0;32m  OK  [0m] Started irqbalance daemon.
+[[0;32m  OK  [0m] Started D-Bus System Message Bus.
+[[0;32m  OK  [0m] Started Login Service.
+[[0;32m  OK  [0m] Started Regular background program processing daemon.
+         Starting Permit User Sessions...
+[[0;32m  OK  [0m] Started Ubuntu Advantage update messaging.
+[[0;32m  OK  [0m] Started Daily apt download activities.
+[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.
+[[0;32m  OK  [0m] Reached target Timers.
+         Starting OpenBSD Secure Shell server...
+         Starting System Logging Service...
+         Starting LSB: Record successful boot for GRUB...
+[[0;32m  OK  [0m] Started Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Started System Logging Service.
+[[0;32m  OK  [0m] Started Permit User Sessions.
+[[0;32m  OK  [0m] Started Accounts Service.
+[[0;32m  OK  [0m] Started OpenBSD Secure Shell server.
+[[0;32m  OK  [0m] Started LSB: Record successful boot for GRUB.
+         Starting Hold until boot process finishes up...
+         Starting Terminate Plymouth Boot Screen...
+[[0;32m  OK  [0m] Started Hold until boot process finishes up.
+[[0;32m  OK  [0m] Started Terminate Plymouth Boot Screen.
+[[0;32m  OK  [0m] Started Serial Getty on ttyS0.
+         Starting Set console scheme...
+[[0;32m  OK  [0m] Started Set console scheme.
+[[0;32m  OK  [0m] Created slice system-getty.slice.
+[[0;32m  OK  [0m] Started Getty on tty1.
+[[0;32m  OK  [0m] Reached target Login Prompts.
+[[0;32m  OK  [0m] Reached target Multi-User System.
+[[0;32m  OK  [0m] Reached target Graphical Interface.
+         Starting Update UTMP about System Runlevel Changes...
+[[0;32m  OK  [0m] Started Stop ureadahead data collection 45s after completed startup.
+[[0;32m  OK  [0m] Started Update UTMP about System Runlevel Changes.
+
+Ubuntu 18.04.6 LTS ubuntu ttyS0
+
+ubuntu login: root (automatic login)
+
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.19.83 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+New release '20.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Done with OS boot, invoking readfile commands...
+[PARSEC] Benchmarks to run:  parsec.raytrace
+
+[PARSEC] [========== Running benchmark parsec.raytrace [1] ==========]
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'simmedium'.
+happy_buddha.obj
+[PARSEC] Running 'time /home/gem5/parsec-benchmark/pkgs/apps/raytrace/inst/amd64-linux.gcc-hooks/bin/rtview happy_buddha.obj -automove -nthreads 32 -frames 3 -res 960 540':
+[PARSEC] [---------- Beginning of output ----------]
+this =0x559728785700
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+[HOOKS] PARSEC Hooks Version 1.2
+initializing LRT ray tracer ...
+default BVH builder : binnedalldimssavespace
+
+
+Options:  automove = ;
+    files = happy_buddha.obj;
+   frames = 3;
+ nthreads = 32;
+      res = [960, 540];
+
+Using memory framebuffer...
+Adding obj file: happy_buddha.obj
+Using auto camera...
+num nodes in scene graph 1
+adding 543522 vertices
+adding 1087425 triangles
+finalizing geometry
+vertices            543522 (6369.4 KB)
+triangles           1087425 (12743.3 KB)
+texture coordinates 0 (0 KB)
+No materials -> create dummy material
+building index
+using BVH builder default
+build time 0.580911
+done
+sceneAABB =[[[-0.04615,0.049738,-0.047301,0] ],[[0.035226,0.24777,0.034077,0] ]]
+Rendering 3 frames...
+[HOOKS] Entering ROI
+-> starting 32 threads...BUG: unable to handle kernel paging request at ffffc90000da7d50
+PGD bc48c067 P4D bc48c067 PUD bc48d067 PMD bbc79067 PTE 0
+Oops: 0000 [#1] SMP PTI
+CPU: 2 PID: 1534 Comm: rtview Not tainted 4.19.83 #1
+Hardware name:  , BIOS  06/08/2008
+RIP: 0010:plist_add+0x5f/0xc5
+Code: 39 c6 74 0e 48 c7 c7 8c c6 b1 81 e8 4e da b6 ff 0f 0b 49 8b 45 00 49 39 c5 74 56 49 8b 4d 00 8b 33 31 ff 48 83 e9 18 48 89 ca <3b> 32 7d 0c 48 8d 6a 18 48 89 d0 48 89 fa eb 15 48 8b 42 08 48 89
+RSP: 0018:ffffc90000db7c88 EFLAGS: 000002ae
+RAX: ffffc90000da7d68 RBX: ffffc90000db7d50 RCX: ffffc90000da7d50
+RDX: ffffc90000da7d50 RSI: 0000000000000064 RDI: 0000000000000000
+RBP: ffff8880bc64b288 R08: ffffc90000db7d00 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: ffffc90000db7d68
+R13: ffff8880bc64b288 R14: ffffc90000db7d58 R15: 0000000000000000
+FS:  00007f8b9e9ff700(0000) GS:ffff8880bcf00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffc90000da7d50 CR3: 00000000b584c000 CR4: 00000000000006a0
+Call Trace:
+ futex_wait_queue_me+0x6b/0x102
+ futex_wait+0xd7/0x1e6
+ do_futex+0x1ed/0x988
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ __se_sys_futex+0x137/0x15c
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ do_syscall_64+0x50/0xf0
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7f8bb5282ad3
+Code: 68 89 44 24 78 4c 89 74 24 70 e8 68 32 00 00 e8 33 36 00 00 45 31 d2 41 89 c1 31 d2 8b 74 24 24 4c 89 e7 b8 ca 00 00 00 0f 05 <48> 3d 00 f0 ff ff 4c 8b 44 24 30 0f 87 2c 01 00 00 44 89 cf 4c 89
+RSP: 002b:00007f8b9e9fedd0 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00005597287aaea0 RCX: 00007f8bb5282ad3
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00005597287aaec8
+RBP: 00005597287aaec4 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00005597287aaec8
+R13: 0000000000000000 R14: 00005597287aae78 R15: 0000000000000000
+Modules linked in:
+CR2: ffffc90000da7d50
+---[ end trace 1a4a6898fe41e3fe ]---
+BUG: unable to handle kernel paging request at ffffc90000d0fd68
+PGD bc48c067
+RIP: 0010:plist_add+0x5f/0xc5
+P4D bc48c067
+Code: 39 c6 74 0e 48 c7 c7 8c c6 b1 81 e8 4e da b6 ff 0f 0b 49 8b 45 00 49 39 c5 74 56 49 8b 4d 00 8b 33 31 ff 48 83 e9 18 48 89 ca <3b> 32 7d 0c 48 8d 6a 18 48 89 d0 48 89 fa eb 15 48 8b 42 08 48 89
+PUD bc48d067
+RSP: 0018:ffffc90000db7c88 EFLAGS: 000002ae
+PMD bbc79067
+PTE 0
+RAX: ffffc90000da7d68 RBX: ffffc90000db7d50 RCX: ffffc90000da7d50
+RDX: ffffc90000da7d50 RSI: 0000000000000064 RDI: 0000000000000000
+Oops: 0000 [#2] SMP PTI
+RBP: ffff8880bc64b288 R08: ffffc90000db7d00 R09: 0000000000000000
+CPU: 3 PID: 1503 Comm: rtview Tainted: G      D           4.19.83 #1
+R10: 0000000000000000 R11: 0000000000000000 R12: ffffc90000db7d68
+Hardware name:  , BIOS  06/08/2008
+R13: ffff8880bc64b288 R14: ffffc90000db7d58 R15: 0000000000000000
+RIP: 0010:futex_wake+0x90/0x13a
+FS:  00007f8b9e9ff700(0000) GS:ffff8880bcf00000(0000) knlGS:0000000000000000
+Code: 00 00 48 8d 7c 24 10 e8 ba f3 ff ff 48 89 c5 8b 00 85 c0 0f 84 8b 00 00 00 48 8d 7d 04 4c 8d 6d 08 e8 72 47 48 00 48 8b 45 08 <4c> 8b 38 48 8d 70 e8 49 83 ef 18 48 8d 46 18 4c 39 e8 74 5a 48 83
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+RSP: 0018:ffffc90000c1fd98 EFLAGS: 0000026e
+CR2: ffffc90000da7d50 CR3: 00000000b584c000 CR4: 00000000000006a0
+RAX: ffffc90000d0fd68 RBX: 0000000000000000 RCX: 0000000062334e46
+RDX: 0000000000000001 RSI: 0000000097b8a5d1 RDI: ffff8880bc647e44
+RBP: ffff8880bc647e40 R08: 00005597287aa6e8 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: 00000000ffffffff
+R13: ffff8880bc647e48 R14: 0000000000000001 R15: 0000000000000000
+FS:  00007f8bb623a740(0000) GS:ffff8880bcf80000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffc90000d0fd68 CR3: 00000000b584c000 CR4: 00000000000006a0
+Call Trace:
+ do_futex+0x204/0x988
+ __se_sys_futex+0x137/0x15c
+ ? ksys_write+0x93/0xb4
+ do_syscall_64+0x50/0xf0
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7f8bb52834fc
+Code: 89 c1 89 c2 83 e1 fc f0 0f b1 0b 75 f3 83 e2 03 83 fa 02 0f 84 f5 00 00 00 45 31 d2 ba 01 00 00 00 89 ee b8 ca 00 00 00 0f 05 <48> 3d 00 f0 ff ff 0f 86 02 ff ff ff 83 f8 ea 0f 84 f9 fe ff ff 83
+RSP: 002b:00007ffc0711c2f0 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00005597287aa6e0 RCX: 00007f8bb52834fc
+RDX: 0000000000000001 RSI: 0000000000000081 RDI: 00005597287aa6e8
+RBP: 0000000000000081 R08: 0000000000000000 R09: 00005597287aa6c0
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000080
+R13: 00005597287aa6e8 R14: 0000000000000043 R15: 00005597287aa6c0
+Modules linked in:
+CR2: ffffc90000d0fd68
+---[ end trace 1a4a6898fe41e3ff ]---
+RIP: 0010:plist_add+0x5f/0xc5
+Code: 39 c6 74 0e 48 c7 c7 8c c6 b1 81 e8 4e da b6 ff 0f 0b 49 8b 45 00 49 39 c5 74 56 49 8b 4d 00 8b 33 31 ff 48 83 e9 18 48 89 ca <3b> 32 7d 0c 48 8d 6a 18 48 89 d0 48 89 fa eb 15 48 8b 42 08 48 89
+RSP: 0018:ffffc90000db7c88 EFLAGS: 000002ae
+RAX: ffffc90000da7d68 RBX: ffffc90000db7d50 RCX: ffffc90000da7d50
+RDX: ffffc90000da7d50 RSI: 0000000000000064 RDI: 0000000000000000
+RBP: ffff8880bc64b288 R08: ffffc90000db7d00 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: ffffc90000db7d68
+R13: ffff8880bc64b288 R14: ffffc90000db7d58 R15: 0000000000000000
+FS:  00007f8bb623a740(0000) GS:ffff8880bcf80000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffc90000d0fd68 CR3: 00000000b584c000 CR4: 00000000000006a0
+rtview[1510]: segfault at 18 ip 00007f8bb5285d43 sp 00007f8bafb66dc8 error 4 in libpthread-2.27.so[7f8bb5275000+1a000]
+Code: 00 00 00 00 00 66 90 48 89 37 48 89 57 08 64 48 8b 04 25 f8 02 00 00 48 89 47 18 64 48 89 3c 25 f8 02 00 00 c3 66 90 48 89 f8 <48> 8b 57 18 64 48 89 14 25 f8 02 00 00 85 f6 74 0c 48 8b 7f 08 ff
+rtview[1512]: segfault at 18 ip 00007f8bb5285d43 sp 00007f8baeb64dc8 error 4
+Code: 00 00 00 00 00 66 90 48 89 37 48 89 57 08 64 48 8b 04 25 f8 02 00 00 48 89 47 18 64 48 89 3c 25 f8 02 00 00 c3 66 90 48 89 f8 <48> 8b 57 18 64 48 89 14 25 f8 02 00 00 85 f6 74 0c 48 8b 7f 08 ff
+BUG: unable to handle kernel paging request at ffffc90000d0fc18
+rtview[1506]: segfault at 18 ip 00007f8bb5285d43 sp 00007f8bb1b6adc8 error 4
+PGD bc48c067
+ in libpthread-2.27.so[7f8bb5275000+1a000]
+P4D bc48c067
+PUD bc48d067 PMD bbc79067 PTE 0
+Code: 00 00 00 00 00 66 90 48 89 37 48 89 57 08 64 48 8b 04 25 f8 02 00 00 48 89 47 18 64 48 89 3c 25 f8 02 00 00 c3 66 90 48 89 f8 <48> 8b 57 18 64 48 89 14 25 f8 02 00 00 85 f6 74 0c 48 8b 7f 08 ff
+Oops: 0000 [#3] SMP PTI
+CPU: 0 PID: 1094 Comm: gmain Tainted: G      D           4.19.83 #1
+Hardware name:  , BIOS  06/08/2008
+RIP: 0010:__schedule+0x472/0x4d1
+Code: 13 48 c7 83 a8 06 00 00 00 00 00 00 4d 89 b4 24 b8 08 00 00 41 83 a4 24 c0 08 00 00 fc 4c 89 ee 48 89 df 49 8b 85 98 0f 00 00 <8a> 00 e8 57 d9 0d 00 48 89 c7 e8 df 66 b4 ff 49 89 c4 eb 15 41 83
+RSP: 0018:ffffc90000ed3a08 EFLAGS: 0000006e
+RAX: ffffc90000d0fc18 RBX: ffff8880ba87e980 RCX: ffff88813584c000
+RDX: 0000000000000001 RSI: ffff8880b9eea640 RDI: ffff8880ba87e980
+RBP: ffffc90000ed3a48 R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffff81188e54 R11: ffff8880b9eea6c0 R12: ffff8880bce1e300
+R13: ffff8880b9eea640 R14: ffff8880bc794400 R15: ffff8880baae0800
+FS:  00007efdab10a700(0000) GS:ffff8880bce00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffc90000d0fc18 CR3: 00000000b584c000 CR4: 00000000000006b0
+Call Trace:
+ ? hrtimer_start_range_ns+0x175/0x199
+ schedule+0x73/0x85
+ schedule_hrtimeout_range_clock+0xab/0xef
+ ? hrtimer_init+0xdc/0xdc
+ poll_schedule_timeout.constprop.4+0x3e/0x57
+ do_sys_poll+0x3c8/0x481
+ ? check_preempt_wakeup+0xde/0x12c
+ ? check_preempt_curr+0x28/0x6d
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? lookup_fast+0xfa/0x27b
+ ? compat_poll_select_copy_remaining+0x118/0x118
+ ? compat_poll_select_copy_remaining+0x118/0x118
+ ? path_init+0xf6/0x261
+ ? terminate_walk+0xa/0x74
+ ? path_lookupat+0x1b1/0x1d7
+ ? inotify_read+0x1a5/0x256
+ ? remove_wait_queue+0xd/0x45
+ ? inotify_read+0x21c/0x256
+ ? _copy_from_user+0x2f/0x4d
+ ? eventfd_read+0x198/0x1cc
+ ? eventfd_write+0x89/0x1c6
+ ? wake_up_q+0x4f/0x4f
+ ? timespec64_add_safe+0x30/0x78
+ ? __se_sys_poll+0x55/0xd1
+ __se_sys_poll+0x55/0xd1
+ do_syscall_64+0x50/0xf0
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7efdadaeebb9
+Code: Bad RIP value.
+RSP: 002b:00007efdab109c70 EFLAGS: 00000293 ORIG_RAX: 0000000000000007
+RAX: ffffffffffffffda RBX: 000055ceac324240 RCX: 00007efdadaeebb9
+RDX: 0000000000000064 RSI: 0000000000000002 RDI: 000055ceac324240
+RBP: 0000000000000002 R08: 0000000000000000 R09: 000055ceac341930
+R10: 00007efda4002920 R11: 0000000000000293 R12: 0000000000000064
+R13: 0000000000000064 R14: 00007efdade27070 R15: 0000000000000002
+Modules linked in:
+CR2: ffffc90000d0fc18
+---[ end trace 1a4a6898fe41e400 ]---
+BUG: unable to handle kernel paging request at ffffc90000d2fc18
+PGD bc48c067
+RIP: 0010:plist_add+0x5f/0xc5
+P4D bc48c067
+Code: 39 c6 74 0e 48 c7 c7 8c c6 b1 81 e8 4e da b6 ff 0f 0b 49 8b 45 00 49 39 c5 74 56 49 8b 4d 00 8b 33 31 ff 48 83 e9 18 48 89 ca <3b> 32 7d 0c 48 8d 6a 18 48 89 d0 48 89 fa eb 15 48 8b 42 08 48 89
+PUD bc48d067
+RSP: 0018:ffffc90000db7c88 EFLAGS: 000002ae
+PMD bbc79067
+PTE 0
+RAX: ffffc90000da7d68 RBX: ffffc90000db7d50 RCX: ffffc90000da7d50
+RDX: ffffc90000da7d50 RSI: 0000000000000064 RDI: 0000000000000000
+Oops: 0000 [#4] SMP PTI
+RBP: ffff8880bc64b288 R08: ffffc90000db7d00 R09: 0000000000000000
+CPU: 1 PID: 1514 Comm: rtview Tainted: G      D           4.19.83 #1
+R10: 0000000000000000 R11: 0000000000000000 R12: ffffc90000db7d68
+Hardware name:  , BIOS  06/08/2008
+R13: ffff8880bc64b288 R14: ffffc90000db7d58 R15: 0000000000000000
+RIP: 0010:__schedule+0x472/0x4d1
+FS:  00007efdab10a700(0000) GS:ffff8880bce00000(0000) knlGS:0000000000000000
+Code: 13 48 c7 83 a8 06 00 00 00 00 00 00 4d 89 b4 24 b8 08 00 00 41 83 a4 24 c0 08 00 00 fc 4c 89 ee 48 89 df 49 8b 85 98 0f 00 00 <8a> 00 e8 57 d9 0d 00 48 89 c7 e8 df 66 b4 ff 49 89 c4 eb 15 41 83
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+RSP: 0018:ffffc90000d17cd0 EFLAGS: 0000006e
+CR2: 00007efdadaeeb8f CR3: 00000000b584c000 CR4: 00000000000006b0
+RAX: ffffc90000d2fc18 RBX: ffff8880b5830680 RCX: 0000000000000000
+RDX: ffff8880b5842740 RSI: ffff8880b5842740 RDI: ffff8880b5830680
+RBP: ffffc90000d17d10 R08: ffff8880b58427d8 R09: 0000000000000000
+R10: 0000000000000072 R11: ffff8880b58427c0 R12: ffff8880bce9e300
+R13: ffff8880b5842740 R14: ffff8880baae0800 R15: ffff8880baae0800
+FS:  00007f8ba8a13700(0000) GS:ffff8880bce80000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffc90000d2fc18 CR3: 00000000b584c000 CR4: 00000000000006a0
+Call Trace:
+ ? __unqueue_futex+0x46/0x4c
+ schedule+0x73/0x85
+ do_exit+0x31d/0x95a
+ do_group_exit+0x99/0x99
+ get_signal+0x37c/0x62f
+ do_signal+0x31/0x526
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ ? __switch_to_asm+0x41/0x70
+ ? __se_sys_futex+0x137/0x15c
+ ? __switch_to_asm+0x41/0x70
+ ? __switch_to_asm+0x35/0x70
+ exit_to_usermode_loop+0x33/0x94
+ do_syscall_64+0xd8/0xf0
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7f8bb5282ad3
+Code: 68 89 44 24 78 4c 89 74 24 70 e8 68 32 00 00 e8 33 36 00 00 45 31 d2 41 89 c1 31 d2 8b 74 24 24 4c 89 e7 b8 ca 00 00 00 0f 05 <48> 3d 00 f0 ff ff 4c 8b 44 24 30 0f 87 2c 01 00 00 44 89 cf 4c 89
+RSP: 002b:00007f8ba8a12dd0 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: fffffffffffffe00 RBX: 00005597287aa720 RCX: 00007f8bb5282ad3
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00005597287aa748
+RBP: 00005597287aa744 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00005597287aa748
+R13: 0000000000000000 R14: 00005597287aa6f8 R15: 0000000000000000
+Modules linked in:
+CR2: ffffc90000d2fc18
+---[ end trace 1a4a6898fe41e401 ]---
+RIP: 0010:plist_add+0x5f/0xc5
+Code: 39 c6 74 0e 48 c7 c7 8c c6 b1 81 e8 4e da b6 ff 0f 0b 49 8b 45 00 49 39 c5 74 56 49 8b 4d 00 8b 33 31 ff 48 83 e9 18 48 89 ca <3b> 32 7d 0c 48 8d 6a 18 48 89 d0 48 89 fa eb 15 48 8b 42 08 48 89
+RSP: 0018:ffffc90000db7c88 EFLAGS: 000002ae
+RAX: ffffc90000da7d68 RBX: ffffc90000db7d50 RCX: ffffc90000da7d50
+RDX: ffffc90000da7d50 RSI: 0000000000000064 RDI: 0000000000000000
+RBP: ffff8880bc64b288 R08: ffffc90000db7d00 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: ffffc90000db7d68
+R13: ffff8880bc64b288 R14: ffffc90000db7d58 R15: 0000000000000000
+FS:  00007f8ba8a13700(0000) GS:ffff8880bce80000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffc90000d2fc18 CR3: 00000000b584c000 CR4: 00000000000006a0
+Fixing recursive fault but reboot is needed!

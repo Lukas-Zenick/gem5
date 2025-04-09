@@ -319,6 +319,55 @@ CacheMemory::allocate(Addr address, AbstractCacheEntry *entry)
     panic("Allocate didn't find an available entry");
 }
 
+AbstractCacheEntry*
+CacheMemory::allocateWithPkt(Addr address, AbstractCacheEntry *entry,
+                             PacketPtr pkt)
+{
+    assert(address == makeLineAddress(address));
+    assert(!isTagPresent(address));
+    assert(cacheAvail(address));
+    DPRINTF(RubyCache, "allocating address: %#x\n", address);
+
+    // Find the cache set
+    int64_t cacheSet = addressToCacheSet(address);
+    std::vector<AbstractCacheEntry*>& set = m_cache[cacheSet];
+
+    // Build replacement candidates
+    std::vector<ReplaceableEntry*> candidates;
+    for (int i = 0; i < m_cache_assoc; i++) {
+        candidates.push_back(static_cast<ReplaceableEntry*>(set[i]));
+    }
+
+    // Find the first open slot
+    for (int i = 0; i < m_cache_assoc; i++) {
+        if (!set[i] || set[i]->m_Permission == AccessPermission_NotPresent) {
+            if (set[i] && (set[i] != entry)) {
+                warn_once("This protocol contains a cache entry handling bug: "
+                          "Entries in the cache should never be NotPresent! If\n"
+                          "this entry (%#x) is not tracked elsewhere, it will memory "
+                          "leak here. Fix your protocol to eliminate these!",
+                          address);
+            }
+            set[i] = entry;  // Initialize entry
+            set[i]->m_Address = address;
+            set[i]->m_Permission = AccessPermission_Invalid;
+            DPRINTF(RubyCache, "Allocate clearing lock for addr: 0x%x\n",
+                    address);
+            set[i]->m_locked = -1;
+            m_tag_index[address] = i;
+            set[i]->setPosition(cacheSet, i);
+            set[i]->replacementData = replacement_data[cacheSet][i];
+            set[i]->setLastAccess(curTick());
+
+            // Call reset with PacketPtr and candidates
+            m_replacementPolicy_ptr->reset(entry->replacementData, pkt, candidates);
+
+            return entry;
+        }
+    }
+    panic("Allocate didn't find an available entry");
+}
+
 void
 CacheMemory::deallocate(Addr address)
 {
@@ -384,10 +433,44 @@ CacheMemory::setMRU(Addr address)
 }
 
 void
+CacheMemory::setMRUWithPkt(Addr address, PacketPtr pkt)
+{
+    AbstractCacheEntry* entry = lookup(makeLineAddress(address));
+    if (entry != nullptr) {
+        // Build replacement candidates
+        int64_t cacheSet = addressToCacheSet(address);
+        std::vector<ReplaceableEntry*> candidates;
+        for (int i = 0; i < m_cache_assoc; i++) {
+            candidates.push_back(static_cast<ReplaceableEntry*>(m_cache[cacheSet][i]));
+        }
+
+        // Call touch with PacketPtr and candidates
+        m_replacementPolicy_ptr->touch(entry->replacementData, pkt, candidates);
+        entry->setLastAccess(curTick());
+    }
+}
+
+void
 CacheMemory::setMRU(AbstractCacheEntry *entry)
 {
     assert(entry != nullptr);
+
     m_replacementPolicy_ptr->touch(entry->replacementData);
+    entry->setLastAccess(curTick());
+}
+
+void
+CacheMemory::setMRUWithPkt(AbstractCacheEntry *entry, PacketPtr pkt)
+{
+    assert(entry != nullptr);
+    // Build replacement candidates
+    int64_t cacheSet = addressToCacheSet(entry->m_Address);
+    std::vector<ReplaceableEntry*> candidates;
+    for (int i = 0; i < m_cache_assoc; i++) {
+        candidates.push_back(static_cast<ReplaceableEntry*>(m_cache[cacheSet][i]));
+    }
+
+    m_replacementPolicy_ptr->touch(entry->replacementData, pkt, candidates);
     entry->setLastAccess(curTick());
 }
 

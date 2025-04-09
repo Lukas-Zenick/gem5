@@ -1,0 +1,8 @@
+
+    echo "=== Starting facesim with input size medium ===";
+    cd /home/gem5/parsec-benchmark;
+    source env.sh;
+    export OMP_NUM_THREADS=2;
+    # Enter the ROI
+    parsecmgmt -a run -p facesim -c gcc-hooks -i simmedium -n 2;
+    m5 exit;

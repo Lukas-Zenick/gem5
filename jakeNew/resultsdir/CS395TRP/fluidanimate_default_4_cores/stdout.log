@@ -1,0 +1,14 @@
+Global frequency set at 1000000000000 ticks per second
+      0: board.pc.south_bridge.cmos.rtc: Real-time clock set to Sun Jan  1 00:00:00 2012
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.0.0.1
+gem5 compiled Feb 26 2025 13:15:18
+gem5 started Feb 26 2025 14:31:08
+gem5 executing on pedagogical-1, pid 1725411
+command line: /scratch/cluster/lukas/gem5-research/build/X86_MESI_Two_Level/gem5.debug --outdir=./jakeNew/outdir/CS395TRP/fluidanimate_default_4_cores ./gem5-configs-395t/run_fs_mesi_two_level.py --benchmark fluidanimate --l2_replacement_policy CS395TRP --size medium --cores 4 --max_rois 1 --sample 1000000 50 1000
+
+Using L2 replacement policy: CS395TRP
+info: Using default config
+***Beginning simulation!

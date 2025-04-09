@@ -1,0 +1,8 @@
+canneal_default_4_cores, 5894.6157
+dedup_default_4_cores, 0.7534
+ferret_default_4_cores,
+fluidanimate_default_4_cores,
+freqmine_default_4_cores, 157.3481
+raytrace_default_4_cores, 230889.1064
+streamcluster_default_4_cores, 574.8293
+swaptions_default_4_cores,

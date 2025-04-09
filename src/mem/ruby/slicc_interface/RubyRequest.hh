@@ -51,6 +51,9 @@
 #include "mem/ruby/protocol/PrefetchBit.hh"
 #include "mem/ruby/protocol/RubyAccessMode.hh"
 #include "mem/ruby/protocol/RubyRequestType.hh"
+#include "base/trace.hh"
+#include "debug/RubyLUKAS.hh"
+
 
 namespace gem5
 {
@@ -105,6 +108,7 @@ class RubyRequest : public Message
           m_tlbiTransactionUid(0),
           m_isSecure(m_pkt ? m_pkt->req->isSecure() : false)
     {
+        //DPRINTF(RubyLUKAS, "v1 - _pkt: %s, m_pkt: %s\n", _pkt, m_pkt);
         m_LineAddress = makeLineAddress(m_PhysicalAddress);
         if (_pkt) {
             m_isGLCSet = m_pkt->req->isGLCSet();
@@ -135,6 +139,7 @@ class RubyRequest : public Message
           m_isSecure(m_pkt->req->isSecure())
     {
         assert(m_pkt->req->isMemMgmt());
+        //DPRINTF(RubyLUKAS, "v2 - _pkt: %s, m_pkt: %s\n", _pkt, m_pkt);
         if (_pkt) {
             m_isGLCSet = m_pkt->req->isGLCSet();
             m_isSLCSet = m_pkt->req->isSLCSet();
@@ -170,6 +175,7 @@ class RubyRequest : public Message
           m_tlbiTransactionUid(0),
           m_isSecure(m_pkt->req->isSecure())
     {
+        //DPRINTF(RubyLUKAS, "v3 - _pkt: %s, m_pkt: %s\n", _pkt, m_pkt);
         m_LineAddress = makeLineAddress(m_PhysicalAddress);
         if (_pkt) {
             m_isGLCSet = m_pkt->req->isGLCSet();
@@ -207,6 +213,7 @@ class RubyRequest : public Message
           m_tlbiTransactionUid(0),
           m_isSecure(m_pkt->req->isSecure())
     {
+        //DPRINTF(RubyLUKAS, "v4 - _pkt: %s, m_pkt: %s\n", _pkt, m_pkt);
         m_LineAddress = makeLineAddress(m_PhysicalAddress);
         if (_pkt) {
             m_isGLCSet = m_pkt->req->isGLCSet();

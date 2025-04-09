@@ -1,0 +1,10 @@
+
+    echo "=== Starting facesim with input size native ===";
+    cd /home/gem5/parsec-benchmark;
+    source env.sh;
+    export OMP_NUM_THREADS=2;
+    # Enter the ROI
+    m5 workbegin;
+    parsecmgmt -a run -p facesim -c gcc-hooks -i simnative -n 2;
+    m5 workend;
+    m5 exit;

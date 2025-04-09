@@ -191,6 +191,7 @@ structure(RubyRequest, desc="...", interface="Message", external="yes") {
   bool isSLCSet,             default="false",desc="If flag is set, bypass GPU L1 and L2 caches";
   bool isSecure,             default="false",desc="If flag is set, request is in secure PA space";
 
+
   RequestPtr getRequestPtr();
 }
 
@@ -213,15 +214,19 @@ structure (CacheMemory, external = "yes") {
   AbstractCacheEntry getNullEntry();
   AbstractCacheEntry allocate(Addr, AbstractCacheEntry);
   AbstractCacheEntry allocate(Addr, AbstractCacheEntry, bool);
+  AbstractCacheEntry allocateWithPkt(Addr, AbstractCacheEntry, PacketPtr);
   void allocateVoid(Addr, AbstractCacheEntry);
+  void allocateVoidWithPkt(Addr, AbstractCacheEntry, PacketPtr);
   void deallocate(Addr);
   AbstractCacheEntry lookup(Addr);
   bool isTagPresent(Addr);
   Cycles getTagLatency();
   Cycles getDataLatency();
   void setMRU(Addr);
+  void setMRUWithPkt(Addr, PacketPtr);
   void setMRU(Addr, int);
   void setMRU(AbstractCacheEntry);
+  void setMRUWithPkt(AbstractCacheEntry, PacketPtr);
   void recordRequestType(CacheRequestType, Addr);
   bool checkResourceAvailable(CacheResourceType, Addr);
 

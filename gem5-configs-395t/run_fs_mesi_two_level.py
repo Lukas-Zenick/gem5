@@ -70,6 +70,12 @@ parser.add_argument(
     choices=["small", "medium", "large", "native"],
     help="Input size",
 )
+parser.add_argument(
+    "--gapArgs",
+    type=str,
+    help="Additional arguments for the GAP benchmark binary",
+    default="",
+)
 parser.add_argument("--cores", type=int, default=1, help="number of cores")
 parser.add_argument(
     "--nokvm",
@@ -242,38 +248,12 @@ board = X86Board(
 # Anything you want to run on a timing core should be wrapped in m5 workbegin/end.
 # Your command should end in m5 exit; otherwise, simulation will drop to a shell
 # prompt at the end rather than exiting Gem5.
-if args.benchmark in ["bc", "bfs", "cc", "pr"]:
-    if args.size == "small":
-        inputName = "USA-road-d.COL.gr"
-    elif args.size == "medium":
-        inputName = "USA-road-d.CAL.gr"
-    else:
-        inputName = "USA-road-d.CTR.gr"
+if args.gapArgs != "":
+    print(f"Running {args.benchmark} with input {args.gapArgs}")
     benchmark_cmd = (
-        "cd /home/gem5/gapbs;"
-        f"./{args.benchmark} -n 1 -r 1 -f ../graphs/roads/{inputName};"
-    )
-elif args.benchmark in ["sssp"]:
-    if args.size == "small":
-        inputName = "g100k.wsg"
-    elif args.size == "medium":
-        inputName = "g1m.wsg"
-    else:
-        inputName = "g4m.wsg"
-    benchmark_cmd = (
-        "cd /home/gem5/gapbs;"
-        f"./{args.benchmark} -n 1 -r 1 -f ../graphs/synth/{inputName};"
-    )
-elif args.benchmark in ["tc"]:
-    if args.size == "small":
-        inputName = "g100k.sg"
-    elif args.size == "medium":
-        inputName = "g500k.sg"
-    else:
-        inputName = "g1m.sg"
-    benchmark_cmd = (
-        "cd /home/gem5/gapbs;"
-        f"./{args.benchmark} -n 1 -r 1 -f ../graphs/synth/{inputName};"
+        f"cd /scratch/cluster/hill/GAP-Binaries; "
+        f"export OMP_NUM_THREADS={args.cores}; "
+        f"./{args.benchmark} {args.gapArgs}; "
     )
 else:
     if args.size == "native":
@@ -283,8 +263,8 @@ else:
     benchmark_cmd = (
         "cd /home/gem5/parsec-benchmark;"
         "source env.sh;"
-        f"NTHREADS={8 * args.cores};"
-        f"stdbuf -oL parsecmgmt -a run -p {args.benchmark} -c gcc-hooks -i {inputName} -n {8 * args.cores}"
+        f"NTHREADS={2 * args.cores};"
+        f"stdbuf -oL parsecmgmt -a run -p {args.benchmark} -c gcc-hooks -i {inputName} -n {2 * args.cores}"
         + " | stdbuf -oL tee /dev/fd/2"
         + ' | awk \'{print $0}; /\\[HOOKS\\] Entering ROI/ {print "ROI Begin Detected! Switching CPU..."; system(""); system("m5 workbegin")}\''
         + ' | awk \'{print $0}; /\\[HOOKS\\] Leaving ROI/ {print "ROI End Detected! Switching CPU..."; system(""); system("m5 workend")}\';'
@@ -321,6 +301,8 @@ board.set_kernel_disk_workload(
     readfile_contents=command,
 )
 
+board.multi_thread = True
+
 
 class Interval:
     NO_WORK = 1  # not even in benchmark
@@ -352,6 +334,7 @@ def workbegin_handler():
     global start_time
 
     num_entries = 0
+    # num_entries = 1
     # Start of benchmark execution.
     while True:
         print(f"Num entries: {num_entries}")
@@ -371,6 +354,9 @@ def workbegin_handler():
                 simulator.schedule_max_insts(args.ff_interval)
             # Whole-benchmark mode: Switch cores to timing and start wamrup/ROI
         elif num_entries == 1:
+            # start_time = time.time()
+            # completed_rois = 0
+            # print("***Beginning benchmark execution")
             switch_handler()
         else:
             print(
@@ -378,6 +364,7 @@ def workbegin_handler():
             )
 
         num_entries += 1
+        print(f"secret: {num_entries}")
         yield False  # continue .run()
 
 

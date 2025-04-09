@@ -2,6 +2,7 @@
 #include "base/logging.hh" // For fatal_if
 #include "params/RPC.hh"
 #include "debug/MockingjayDebug.hh"
+#include "debug/LUKAS.hh"
 
 namespace gem5
 {
@@ -90,6 +91,11 @@ RPC::touch(const std::shared_ptr<ReplacementData>& replacement_data, const Packe
         age_ctr[set] = 0;
 
         for (const auto &candidate : candidates) {
+            //DPRINTF(LUKAS, "candidate ptr is: %d\n", candidate);
+            if(!candidate) {
+                //DPRINTF(LUKAS, "WARNING: touch - candidate is null\n");
+                continue;
+            }
             std::shared_ptr<RPCReplData> candidate_repl_data =
                 std::static_pointer_cast<RPCReplData>(
                     candidate->replacementData);
@@ -152,6 +158,11 @@ RPC::reset(const std::shared_ptr<ReplacementData>& replacement_data, const Packe
         age_ctr[set] = 0;
 
         for (const auto &candidate : candidates) {
+            //DPRINTF(LUKAS, "candidate ptr is: %d\n", candidate);
+            if(!candidate) {
+                //DPRINTF(LUKAS, "WARNING: reset - candidate is null\n");
+                continue;
+            }
             std::shared_ptr<RPCReplData> candidate_repl_data =
                 std::static_pointer_cast<RPCReplData>(
                     candidate->replacementData);
@@ -179,6 +190,11 @@ RPC::getVictim(const ReplacementCandidates& candidates) const {
 
     // Visit all candidates to find victim
     for (const auto& candidate : candidates) {
+        //DPRINTF(LUKAS, "candidate ptr is: %d\n", candidate);
+        if(!candidate) {
+            //DPRINTF(LUKAS, "WARNING: getVictim - candidate is null\n");
+            continue;
+        }
         std::shared_ptr<RPCReplData> candidate_repl_data =
             std::static_pointer_cast<RPCReplData>(
                 candidate->replacementData);

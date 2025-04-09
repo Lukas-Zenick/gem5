@@ -1,7 +1,9 @@
 #include "mem/cache/replacement_policies/cs395t_rp.hh"
 #include "base/logging.hh" // For fatal_if
+// #include "base/cprintf.hh"
 #include "params/CS395TRP.hh"
 #include "debug/MockingjayDebug.hh"
+#include "debug/LUKAS.hh"
 
 namespace gem5
 {
@@ -35,6 +37,15 @@ CS395TRP::touch(const std::shared_ptr<ReplacementData>& replacement_data, const 
     std::shared_ptr<CS395TReplData> casted_replacement_data =
         std::static_pointer_cast<CS395TReplData>(replacement_data);
 
+    if(!pkt) {
+        return;
+    }
+
+    //DPRINTF(LUKAS, "TOUCH: pkt ptr is: %d\n", pkt);
+    //DPRINTF(LUKAS, "TOUCH: isRequest: %d\n", pkt->isRequest());
+    //DPRINTF(LUKAS, "TOUCH: hasPC: %d\n", pkt->req->hasPC());
+    //DPRINTF(LUKAS, "TOUCH: hasContextId: %d\n", pkt->req->hasContextId());
+
     // TODO: Which requests should we monitor?
     if (!pkt->isRequest() || !pkt->req->hasPC() || !pkt->req->hasContextId()) {
         return;
@@ -59,8 +70,13 @@ CS395TRP::touch(const std::shared_ptr<ReplacementData>& replacement_data, const 
     //  1. If sampled cache hit, predictor will train with signature in the sampled cache for new reuse distance
     //  2. If sampled cache miss and sampled cache no eviction, no training needed
     //  3. If sampled cache miss and sampled cache eviction, the eviction line should be detrained as scan line
+    //DPRINTF(LUKAS, "getAddr: %d, getPC: %d, curr_timestamp: %d, set: %d, last_PC: %d, last_timestamp: %d, contextId: %d, getInfRd: %d\n", pkt->getAddr(), pkt->req->getPC(), curr_timestamp, set, last_PC, last_timestamp, pkt->req->contextId(), predictor->getInfRd());
     if (sampled_cache->sample(pkt->getAddr(), pkt->req->getPC(), &curr_timestamp, set, &last_PC, &last_timestamp, true, &evict, &sample_hit, pkt->req->contextId(), predictor->getInfRd())) {
+        //DPRINTF(LUKAS, "About to train\n");
+        //DPRINTF(LUKAS, "sample_hit: %d, evict: %d\n", sample_hit, evict);
         predictor->train(last_PC, sample_hit, curr_timestamp, last_timestamp, evict);
+        //DPRINTF(LUKAS, "Training complete\n");
+        //DPRINTF(LUKAS, "Cache hit ---- Sampler, Last timestamp: %d, Current timestamp: %d, Last PC: 0x%.8x\n", last_timestamp, curr_timestamp, last_PC);
         DPRINTF(MockingjayDebug, "Cache hit ---- Sampler, Last timestamp: %d, Current timestamp: %d, Last PC: 0x%.8x\n", last_timestamp, curr_timestamp, last_PC);
     }
 
@@ -72,6 +88,11 @@ CS395TRP::touch(const std::shared_ptr<ReplacementData>& replacement_data, const 
         age_ctr[set] = 0;
 
         for (const auto &candidate : candidates) {
+            //DPRINTF(LUKAS, "candidate ptr is: %d\n", candidate);
+            if(!candidate) {
+                //DPRINTF(LUKAS, "WARNING: touch - candidate is null\n");
+                continue;
+            }
             std::shared_ptr<CS395TReplData> candidate_repl_data =
                 std::static_pointer_cast<CS395TReplData>(
                     candidate->replacementData);
@@ -86,6 +107,16 @@ void
 CS395TRP::reset(const std::shared_ptr<ReplacementData>& replacement_data, const PacketPtr pkt, const ReplacementCandidates& candidates) {
     std::shared_ptr<CS395TReplData> casted_replacement_data =
         std::static_pointer_cast<CS395TReplData>(replacement_data);
+
+
+    if(!pkt) {
+        return;
+    }
+
+    //DPRINTF(LUKAS, "RESET: pkt ptr is: %d\n", pkt);
+    //DPRINTF(LUKAS, "RESET: isResponse: %d\n", pkt->isResponse());
+    //DPRINTF(LUKAS, "RESET: hasPC: %d\n", pkt->req->hasPC());
+    //DPRINTF(LUKAS, "RESET: hasContextId: %d\n", pkt->req->hasContextId());
 
     // TODO: Which requests should we monitor?
     if (!pkt->isResponse() || !pkt->req->hasPC() || !pkt->req->hasContextId()) {
@@ -119,6 +150,7 @@ CS395TRP::reset(const std::shared_ptr<ReplacementData>& replacement_data, const 
     //  3. If sampled cache miss and sampled cache eviction, the eviction line should be detrained as scan line
     if (sampled_cache->sample(pkt->getAddr(), pkt->req->getPC(), &curr_timestamp, set, &last_PC, &last_timestamp, false, &evict, &sample_hit, pkt->req->contextId(), predictor->getInfRd())) {
         predictor->train(last_PC, sample_hit, curr_timestamp, last_timestamp, evict);
+        //DPRINTF(LUKAS, "Cache miss ---- Sampler, Last timestamp: %d, Current timestamp: %d, Last PC: 0x%.8x\n", last_timestamp, curr_timestamp, last_PC);
         DPRINTF(MockingjayDebug, "Cache miss ---- Sampler, Last timestamp: %d, Current timestamp: %d, Last PC: 0x%.8x\n", last_timestamp, curr_timestamp, last_PC);
     }
 
@@ -130,6 +162,11 @@ CS395TRP::reset(const std::shared_ptr<ReplacementData>& replacement_data, const 
         age_ctr[set] = 0;
 
         for (const auto &candidate : candidates) {
+            //DPRINTF(LUKAS, "candidate ptr is: %d\n", candidate);
+            if(!candidate) {
+                //DPRINTF(LUKAS, "WARNING: reset - candidate is null\n");
+                continue;
+            }
             std::shared_ptr<CS395TReplData> candidate_repl_data =
                 std::static_pointer_cast<CS395TReplData>(
                     candidate->replacementData);
